@@ -1,0 +1,48 @@
+<script lang="ts">
+	import type { MouseEventHandler } from "svelte/elements";
+
+    export let handler: (event: MouseEvent & { currentTarget: EventTarget & HTMLButtonElement; }) => void = ()=>{}
+
+    export let disabled: boolean = false
+    
+    export let width:string = 'w-auto'
+
+    export let mode: 'blue' | 'blue-inverted' | 'side' = 'blue'
+    let buttonStyle: string;
+    $: {
+        switch(mode) {
+            case 'blue':
+                buttonStyle = 'isBlue';
+                break;
+            case 'blue-inverted':
+                buttonStyle = 'isBlueInverted';
+                break;
+            case 'side':
+                buttonStyle = 'side';
+                break;
+            default:
+                buttonStyle = 'isBlue';
+        }
+    }
+
+    export let customClass: string = '';
+    
+    // export let btnCancel: boolean = false
+</script>
+
+<!-- design button here -->
+<button {disabled} class="{`${width} ${buttonStyle}  ${customClass}`}" on:click={handler}><slot/></button>
+
+<style>
+    .isBlue {
+        @apply bg-[#aeecff] text-black py-2 px-4 rounded-full hover:scale-105 transition;
+    }
+
+    .isBlueInverted{
+        @apply bg-black text-[#aeecff] py-2 px-4 rounded-full border-2 border-[#aeecff] hover:scale-105 transition;
+    }
+
+    .side{
+        @apply bg-[#141b1d] text-[#aeecff] py-2 px-4 rounded-lg hover:drop-shadow-[0px_0px_2px_#76b5c3];
+    }
+</style>
