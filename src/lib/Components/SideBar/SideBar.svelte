@@ -9,7 +9,7 @@
 
     /**
      * Handling Click to go each page
-     * @param tab
+     * @param tab tab indicate pages
      */
 	function handleClickTab(tab: string) {
 		if (tab === tabs[0]) {
@@ -74,8 +74,8 @@
     <div class="flex flex-col gap-y-2">
         <p class="text-[#aeecff] text-sm">Audited By</p>
         <div class="flex flex-row gap-x-2">
-            <img src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fottersec-logo.png&w=128&q=75" alt="img" class="w-[100px] h-auto">
-            <img src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fmovebit-logo.png&w=256&q=75" alt="img" class="w-[120px] h-auto">
+            <img src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fottersec-logo.png&w=128&q=75" alt="img" class="w-[120px] h-auto">
+            <img src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fmovebit-logo.png&w=256&q=75" alt="img" class="w-[140px] h-auto">
         </div>
     </div>
 </div>
