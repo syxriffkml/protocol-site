@@ -9,19 +9,12 @@
 	storePopup.set({ computePosition, autoUpdate, flip, shift, offset, arrow });
 </script>
 
-<div class="bg-slate-900">
-	<AppShell regionPage="relative" slotPageHeader="sticky top-0 z-10" slotSidebarLeft="w-[18rem] hidden xl:block">
-		
-		<svelte:fragment slot="sidebarLeft">
-			<SideBar/>
-		</svelte:fragment>
-
-		<svelte:fragment slot="pageHeader">
-			<NavBar/>
-		</svelte:fragment>
-
-	
-		<slot />
-	
-	</AppShell>
+<div class="bg-slate-900 flex flex-row">
+	<div class="w-[22rem] hidden xl:block fixed h-screen">
+		<SideBar/>
+	</div>
+	<div class="w-full pl-0 xl:pl-[22rem]">
+		<NavBar/>
+		<slot/>
+	</div>
 </div>

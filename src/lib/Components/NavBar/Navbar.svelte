@@ -4,7 +4,7 @@
 
 </script>
 
-<div class="flex flex-row xl:justify-between p-4 h-[78px] backdrop-blur-sm bg-white/10">
+<div class="flex flex-row xl:justify-between p-4 h-[78px] backdrop-blur-sm bg-white/10 sticky top-0 z-10">
     <!--Desktop View-->
     <div class="hidden xl:flex flex-row bg-black/25 w-auto rounded-3xl py-2 px-4 gap-x-4">
         <div class="flex flex-row items-center justify-center gap-x-2">

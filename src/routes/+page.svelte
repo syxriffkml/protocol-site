@@ -2,7 +2,7 @@
 	import Button from "$lib/Components/Button/Button.svelte";
 </script>
 
-<div class="container h-screen mx-auto flex justify-center items-center">
+<div class="h-screen w-full flex justify-center items-center">
 	
 	<Button width="w-[120px]" mode="side" >Click me</Button>
 
