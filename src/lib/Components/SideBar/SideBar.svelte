@@ -1,3 +1,4 @@
+<!-- prettier-ignore -->
 <script lang="ts">
     import Button from "../Button/Button.svelte";
     import Icon from '@iconify/svelte';
@@ -22,6 +23,7 @@
 
 </script>
 
+<!-- prettier-ignore -->
 <div class="hidden xl:flex flex-col justify-between bg-black h-full w-full p-8">
     <div class="flex items-center justify-center w-full mb-8">
         <img src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fbucket-text-logo.png&w=256&q=75" alt="img" class="w-[120px] h-auto">
