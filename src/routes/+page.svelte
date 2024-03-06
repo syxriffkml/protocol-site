@@ -72,7 +72,7 @@
     ];
 </script>
 
-<div class="h-full w-full flex flex-col xl:max-w-[90rem] items-start mx-auto p-6 gap-y-6">
+<div class="h-auto w-full flex flex-col xl:max-w-[90rem] items-start mx-auto p-6 gap-y-6">
 
 	<div class="flex flex-col w-full gap-y-6">
 		<div class="flex flex-row w-full gap-x-6">

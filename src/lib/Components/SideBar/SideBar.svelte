@@ -21,21 +21,34 @@
         window.location.href = tab.href;
     }
 
+    let currentPage = '';
+    function setCurrentPage(node: any) {
+        currentPage = window.location.pathname;
+    }
+
 </script>
 
 <!-- prettier-ignore -->
-<div class="hidden xl:flex flex-col justify-between bg-black h-full w-full p-6">
+<div use:setCurrentPage class="hidden xl:flex flex-col justify-between bg-black h-full w-full p-6">
     <div class="flex items-center justify-center w-full mb-12">
         <img src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fbucket-text-logo.png&w=256&q=75" alt="img" class="w-[140px] h-auto">
     </div>
 
     <div class="w-full flex-grow space-y-3">
-        {#each tabs as tab}
-            <Button width="w-full" mode="side" customClass="h-14" rounded="rounded-lg" handler={(()=>{ handleClickTab(tab); })}>
-                <p class="flex items-center justify-start gap-x-4">
-                    <Icon icon={tab.icon} class="w-8 h-8"/>
+        {#each tabs as tab (tab.href)}
+            <Button width="w-full" mode="side" customClass="h-14" handler={(()=>{ handleClickTab(tab); })}>
+                <div class="flex items-center justify-start gap-x-4">
+                    {#if currentPage === tab.href}
+                        <div class="rounded-full bg-[#aeecff] p-1">
+                            <Icon icon={tab.icon} class="w-7 h-7 text-black"/>
+                        </div>
+                    {:else}
+                        <div class="rounded-full bg-transparent p-1">
+                            <Icon icon={tab.icon} class="w-7 h-7 text-[#aeecff]"/>
+                        </div>
+                    {/if}
                     <span class="text-lg font-normal">{tab.name}</span>
-                </p>
+                </div>
             </Button>
         {/each}
     </div>
