@@ -31,7 +31,7 @@
 
     <div class="w-full flex-grow space-y-3">
         {#each tabs as tab}
-            <Button width="w-full" mode="side" customClass="h-14" handler={(()=>{ handleClickTab(tab); })}>
+            <Button width="w-full" mode="side" customClass="h-14" rounded="rounded-lg" handler={(()=>{ handleClickTab(tab); })}>
                 <p class="flex items-center justify-start gap-x-4">
                     <Icon icon={tab.icon} class="w-8 h-8"/>
                     <span class="text-lg font-normal">{tab.name}</span>

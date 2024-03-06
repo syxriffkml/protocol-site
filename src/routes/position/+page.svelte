@@ -41,7 +41,7 @@
                     Content
                 </div>
             </Section> -->
-            <button class="w-[80%] mx-auto xl:mx-0 xl:max-w-[300px]" on:click={()=>{console.log('CLicked!');
+            <button class="w-[80%] mx-auto xl:mx-0 xl:max-w-[300px]" on:click={()=>{console.log('Clicked!');
             }}>
                 <Section customClass={""} animate={"floating"}>
                     <div class="flex flex-col items-center justify-center xl:h-[350px] gap-2">
