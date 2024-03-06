@@ -15,8 +15,10 @@
                 <div class="xl:-translate-x-[65px] -translate-y-[30px] absolute bg-white z-50  rounded-full p-1.5">
                     <img src="https://app.bucketprotocol.io/images/vsui-icon.svg" alt="">
                 </div>
-                <div class="xl:-translate-x-[40px] -translate-y-[15px] w-[160px] xl:w-[200px] bg-white text-black text-2xl text-right p-1 pr-4 font-semibold rounded-full">
-                    {header}
+                <div class="xl:-translate-x-[40px] -translate-y-[15px] w-fit xl:w-[200px] bg-white text-black text-2xl text-right p-1 pr-4 font-semibold rounded-full">
+                    <div class="ml-20">
+                        {header}
+                    </div>
                 </div>
             </div>
             <slot></slot>

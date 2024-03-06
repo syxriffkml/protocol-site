@@ -51,7 +51,7 @@
             </div>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2  xl:grid-cols-3 gap-6 mt-10">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-3 gap-6 mt-10">
             <div class="flex col-span-1 xl:col-span-2">
                 <div class="hidden xl:block w-[54px]"/>
                 <SectionImage height={"h-full"} margin={"mt-0"}>
@@ -59,14 +59,14 @@
                     <div class="h-full flex justify-start items-end ">
                         <div class="flex flex-col gap-6">
                            <div class="">
-                                <p class="text-3xl font-semibold">
+                                <p class="xl:text-3xl font-semibold">
                                     Get some BUCK
                                 </p>
-                                <p class="text-sm">
+                                <p class="text-xs xl:text-sm">
                                     Boost your reward by Create Position
                                 </p>
                             </div>
-                            <div class="flex gap-2">
+                            <div class="flex flex-wrap gap-2">
                                 <Button handler={(()=>{window.location.href = '/position'})}>
                                     Add Position
                                 </Button>
