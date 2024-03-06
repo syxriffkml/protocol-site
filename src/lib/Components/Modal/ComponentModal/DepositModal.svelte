@@ -1,5 +1,9 @@
-<script>
+<script lang="ts">
 	import Button from "$lib/Components/Button/Button.svelte";
+
+    let inputDeposit:string = ''
+
+    $: inputDeposit = inputDeposit.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');
 
 </script>
 <div class="flex flex-col gap-y-6 p-2">
@@ -19,7 +23,7 @@
     
         </div>
         <div class="flex w-full bg-[#aee]/10 backdrop-blur-sm rounded-lg p-1">
-            <input class="w-full bg-transparent  rounded-l-lg !border-none"/>
+            <input bind:value={inputDeposit} class="w-full bg-transparent  rounded-l-lg !border-none" placeholder="0.00"/>
             <button class="px-4 text-slate-500 font-bold">
                 MAX
             </button>

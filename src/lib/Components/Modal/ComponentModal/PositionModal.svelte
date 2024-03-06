@@ -4,6 +4,14 @@
 	import { fade, slide } from 'svelte/transition';
     
     let headSelect: string = 'BUCK'
+
+    let inputBalance:string = ''
+
+    $: inputBalance = inputBalance.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');
+
+    let inputBorrow:string = ''
+
+    $: inputBorrow = inputBorrow.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');
     
     let showTank : boolean = false;
     
@@ -47,7 +55,7 @@
             </div>
         </div>
         <div class="flex w-full gap-x-2 bg-[#aee]/10 backdrop-blur-sm rounded-lg p-1 relative">
-            <input class="w-full bg-transparent rounded-l-lg !border-none" />
+            <input bind:value={inputBalance} class="w-full bg-transparent rounded-l-lg !border-none" placeholder="0.00"/>
             <button class=" flex justify-center items-center gap-2 bg-[#213035] rounded-md px-2" on:click={(()=>{showTank = !showTank})}>
                 <div class="w-9 h-9 flex justify-center items-center">
                     <img
@@ -93,7 +101,7 @@
             </div>
         </div>
         <div class="flex w-full gap-x-2 bg-[#aee]/10 backdrop-blur-sm rounded-lg p-1">
-            <input class="w-full border bg-transparent rounded-l-lg z-10 !border-none" />
+            <input bind:value={inputBorrow} class="w-full border bg-transparent rounded-l-lg z-10 !border-none" placeholder="0.00"/>
             <div class="flex justify-center items-center gap-2 bg-[#232f33] rounded-md px-2">
                 <div class="w-9 h-9 flex justify-center items-center">
                     <img

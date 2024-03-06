@@ -3,6 +3,10 @@
 
     let claimdiscount: boolean = false;
 
+    let inputWithdraw:string = ""
+
+    $: inputWithdraw = inputWithdraw.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');
+    
     let discount = [0,20,50,100];
 
 	function handleClickDiscount(disc: number) {
@@ -10,8 +14,11 @@
             claimdiscount = false;
         } else {
             claimdiscount = true;
+
         }
 	}
+
+
 </script>
 <div class="flex flex-col gap-y-6 p-2">
     <div class="space-y-2">
@@ -30,7 +37,7 @@
     
         </div>
         <div class="flex w-full bg-[#aee]/10 backdrop-blur-sm rounded-lg gap-x-2 p-1">
-            <input class="w-full bg-transparent  rounded-l-lg !border-transparent"/>
+            <input bind:value={inputWithdraw} class="w-full bg-transparent  rounded-l-lg !border-transparent" placeholder="0.00"/>
             <div class="flex justify-center items-center gap-2 bg-[#232f33] rounded-md px-2">
                 <div class="w-9 h-9 flex justify-center items-center">
                     <img src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fbuck-icon.png&w=32&q=75" alt="">

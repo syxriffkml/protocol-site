@@ -9,7 +9,10 @@
     import WithdrawModal from '$lib/Components/Modal/ComponentModal/WithdrawModal.svelte'
 
 	let _depositModal: Modal;
+
 	let _withdrawModal: Modal;
+
+   
 
 	/**
 	 * @var pool will be temporarily used until API ready
@@ -73,7 +76,14 @@
 								>
 									Buy
 								</Button>
-								<Button mode={'blue-inverted'}>PSM</Button>
+								<Button 
+                                    mode={'blue-inverted'}
+                                    handler={(()=>{
+                                        window.location.href = '/peg'
+                                    })}
+                                >
+                                    PSM
+                                </Button>
 							</div>
 						</div>
 					</div>
@@ -136,7 +146,7 @@
 	type="dark"
 >
 
-    <DepositModal></DepositModal>
+    <DepositModal/>
 </Modal>
 <Modal
 	bind:this={_withdrawModal}
@@ -145,5 +155,5 @@
 	title="Withdraw"
 	type="dark"
 >
-    <WithdrawModal></WithdrawModal>
+    <WithdrawModal/>
 </Modal>

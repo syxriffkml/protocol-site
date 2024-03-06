@@ -73,9 +73,9 @@
     </div>
 
 
-    <div class="flex flex-col gap-y-6 w-full p-4">
+    <div class="flex flex-col gap-y-10 w-full p-4">
         {#each subAssets as assets}
-            <div class="flex gap-2">
+            <div class="flex  gap-2">
                 <p class="text-2xl font-semibold">
                     {#if assets === 'Pool'}
                          Tank deposits
