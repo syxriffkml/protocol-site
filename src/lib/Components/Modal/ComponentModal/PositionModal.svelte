@@ -39,71 +39,73 @@
 
 <div class="flex flex-col gap-y-6 p-2">
 	<div class="space-y-1">
-		<div class="flex justify-between text-sm font-semibold">
-			<p class="">Amount of collateral</p>
-			<div class="flex gap-2">
-				<div>SUI Balance: </div>
-				<div>0</div>
-			</div>
-		</div>
-		<div class="flex w-full gap-x-2 bg-[#aee]/10 backdrop-blur-sm rounded-lg p-1">
-			<input class="w-full bg-transparent rounded-l-lg !border-none" />
-			<button class="relative flex justify-center items-center gap-2 bg-[#213035] rounded-md px-2" on:click={(()=>{showTank = !showTank})}>
-				<div class="w-9 h-9 flex justify-center items-center">
-					<img
-						src={imgSelect}
-						alt=""
-					/>
-				</div>
-				<div class=" font-bold text-center w-full" >{headSelect}</div>
-                
+        <div class="flex justify-between text-sm font-semibold">
+            <p class="">Amount of collateral</p>
+            <div class="flex gap-2">
+                <div>SUI Balance: </div>
+                <div>0</div>
+            </div>
+        </div>
+        <div class="flex w-full gap-x-2 bg-[#aee]/10 backdrop-blur-sm rounded-lg p-1 relative">
+            <input class="w-full bg-transparent rounded-l-lg !border-none" />
+            <button class=" flex justify-center items-center gap-2 bg-[#213035] rounded-md px-2" on:click={(()=>{showTank = !showTank})}>
+                <div class="w-9 h-9 flex justify-center items-center">
+                    <img
+                        src={imgSelect}
+                        alt=""
+                    />
+                </div>
+                <div class=" font-bold text-center w-full" >{headSelect}</div>
                 {#if showTank}
-                    <div class="absolute z-[50] flex flex-col top-[100%] w-[110px] bg-[#213035] backdrop-blur-sm border border-gray-600 rounded-lg" in:slide out:slide>
+                    <div class="absolute z-9999 top-[100%] right-0 flex flex-col h-[100px] overflow-y-scroll w-[140px] bg-[#213035] border border-gray-600 rounded-lg " in:slide out:slide>
                         {#each pool as tank}
-                                <button class="flex justify-start items-center gap-x-2 p-2" on:click={(()=>{
+                                <button class="flex justify-start items-center gap-x-2 p-2 z-20" on:click={(()=>{
                                     console.log(tank);
+                                    
                                     headSelect = tank.header;
                                     imgSelect = imgTANK;
                                     
                                 })}>
-                                    <div class="w-4 h-4">
+                                    <div class="w-4 h-4 my-auto">
                                         <img src="https://app.bucketprotocol.io/images/vsui-icon.svg" alt="">
                                     </div>
                                     <div>
                                         {tank.header}
                                     </div>
-
+            
                                 </button>
                         {/each}
                     </div>
                 {/if}
-			</button>
-		</div>
-	</div>
-
-	<div class="space-y-1 z-[-1]">
-		<div class="flex justify-between text-sm font-semibold">
-			<p>Borrow $BUCK</p>
-			<div class="flex gap-2">
-				<div>Auto safe borrow</div>
-				<div class="my-auto">
+                
+            </button>
+        </div>
+    </div>
+    
+    <div class="space-y-1 {showTank? 'z-[-1]': 'z-[0]'}"> 
+        <div class="flex justify-between text-sm font-semibold">
+            <p>Borrow $BUCK</p>
+            <div class="flex gap-2">
+                <div>Auto safe borrow</div>
+                <div class="my-auto">
                     <Icon icon="material-symbols:help-rounded" width="15" height="15"  style="color: #aeecff" />
                 </div>
-			</div>
-		</div>
-		<div class="flex w-full gap-x-2 bg-[#aee]/10 backdrop-blur-sm rounded-lg p-1">
-			<input class="w-full bg-transparent rounded-l-lg !border-none" />
-			<div class="flex justify-center items-center gap-2 bg-[#232f33] rounded-md px-2">
-				<div class="w-9 h-9 flex justify-center items-center">
-					<img
-						src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fbuck-icon.png&w=32&q=75"
-						alt=""
-					/>
-				</div>
-				<div class="font-bold text-center w-full">BUCK</div>
-			</div>
-		</div>
-	</div>
+            </div>
+        </div>
+        <div class="flex w-full gap-x-2 bg-[#aee]/10 backdrop-blur-sm rounded-lg p-1">
+            <input class="w-full border bg-transparent rounded-l-lg z-10 !border-none" />
+            <div class="flex justify-center items-center gap-2 bg-[#232f33] rounded-md px-2">
+                <div class="w-9 h-9 flex justify-center items-center">
+                    <img
+                        src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fbuck-icon.png&w=32&q=75"
+                        alt=""
+                    />
+                </div>
+                <div class="font-bold text-center w-full">BUCK</div>
+            </div>
+        </div>
+    </div>
+    
 
 	<Button handler={(()=>{
         console.log('Click Connect Button');
