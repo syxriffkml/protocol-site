@@ -161,6 +161,22 @@
             </Button>
         </div>
 
+        <div class="border border-white/5 px-4 py-6 rounded-lg space-y-2">
+            <p class="font-medium text-lg text-[#6c939f]">Liquidity added</p>
+            <div class="flex items-center justify-between">
+                <p class="text-sm font-medium text-[#6c939f]">Total Value</p>
+                <p class="text-sm font-medium">~$ 0 USDC-BUCK</p>
+            </div>
+            <div class="border border-[#6c939f] mt-2"></div>
+            <div class="flex items-center justify-between">
+                <p class="text-lg font-medium text-[#aeecff] flex items-center gap-x-1">
+                    Estimated APR
+                    <Icon icon="ep:question-filled" class="text-[#aeecff] w-4 h-4"/>
+                </p>
+                <p class="text-lg font-medium">71.76%</p>
+            </div>
+
+        </div>
 
     </div>
 </Modal>
