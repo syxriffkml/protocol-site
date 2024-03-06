@@ -1,9 +1,12 @@
 <script lang="ts">
 
+    export let height:string = 'h-[272px]'
+    export let margin:string = 'mt-10'
+
     export let customClass: string = '';
 </script>
 
-<div class="banner bg-[#232f33] rounded-lg w-full h-[272px] p-10 mt-10 {customClass}">
+<div class="banner bg-[#232f33] rounded-lg w-full {height} p-10 {margin} {customClass}">
     <slot/>
 </div>
 
