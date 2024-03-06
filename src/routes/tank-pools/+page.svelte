@@ -5,7 +5,6 @@
     import SectionOverflow from "$lib/Components/Box/BoxOverFlow.svelte";
     import SectionImage from "$lib/Components/Box/BoxImage.svelte";
 
-    let header=['SUI','afSUI','vSUI','haSUI','afSUI/SUI','WETH','USDC','USDT','USDY',]
     let pool =
     [
         { header:'SUI', totalDepo:6.19, depo:0, earn:0 },
@@ -83,8 +82,8 @@
                 </SectionImage>
             </div>
 
-            {#each header as head}          
-                <SectionOverflow header={head}>
+            {#each pool as head}          
+                <SectionOverflow header={head.header}>
 
                     <div class="w-[90%]">
                         <div>
@@ -104,7 +103,7 @@
                             </div>
                             <div class="w-full">
                                 <p class="text-sm whitespace-nowrap">
-                                    Earned {head}
+                                    Earned {head.header}
                                 </p>
                                 <div>
                                     0
