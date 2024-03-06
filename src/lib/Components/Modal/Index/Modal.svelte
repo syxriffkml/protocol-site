@@ -61,7 +61,7 @@
 </script>
 
 {#if isOpen}
-	<div class="bg-black/40 backdrop-blur-sm fixed inset-0  flex items-center justify-center" in:fade out:fade>
+	<div class="bg-black/40 backdrop-blur-sm fixed inset-0  flex items-center justify-center z-20" in:fade out:fade>
 		<div class="fixed inset-0 {z_index} flex items-center justify-center overflow-auto {closeDisabled ? 'cursor-not-allowed' : 'cursor-default'}"
          on:click={handleOutsideClick} on:keydown={handleKeyDown} tabindex="0" role="button" transition:scale={{ duration: 300, delay: 100, easing: cubicInOut }}>
 			<div

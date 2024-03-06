@@ -36,7 +36,7 @@
 
     <div class="w-full flex-grow space-y-3">
         {#each tabs as tab (tab.href)}
-            <Button width="w-full" mode="side" customClass="h-14" handler={(()=>{ handleClickTab(tab); })}>
+            <Button width="w-full" mode="side" rounded="rounded-lg" customClass="h-14" handler={(()=>{ handleClickTab(tab); })}>
                 <div class="flex items-center justify-start gap-x-4">
                     {#if currentPage === tab.href}
                         <div class="rounded-full bg-[#aeecff] p-1">
