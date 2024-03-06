@@ -1,6 +1,30 @@
-<script>
+<script lang="ts">
 	import Button from '$lib/Components/Button/Button.svelte';
     import Icon from "@iconify/svelte";
+	import { fade, slide } from 'svelte/transition';
+    
+    let headSelect: string = 'BUCK'
+    
+    let showTank : boolean = false;
+    
+    let imgBUCK:string = 'https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fbuck-icon.png&w=32&q=75'
+    let imgTANK:string = 'https://app.bucketprotocol.io/images/vsui-icon.svg'
+    
+    let imgSelect: string = imgBUCK;
+    /**
+	 * @var pool will be temporarily used until API ready
+	 */
+	let pool = [
+		{ header: 'SUI', totalDepo: 6.19, depo: 0, earn: 0 },
+		{ header: 'afSUI', totalDepo: 6.19, depo: 0, earn: 0 },
+		{ header: 'vSUI', totalDepo: 6.19, depo: 0, earn: 0 },
+		{ header: 'haSUI', totalDepo: 6.19, depo: 0, earn: 0 },
+		{ header: 'afSUI/SUI', totalDepo: 6.19, depo: 0, earn: 0 },
+		{ header: 'WETH', totalDepo: 6.19, depo: 0, earn: 0 },
+		{ header: 'USDC', totalDepo: 6.19, depo: 0, earn: 0 },
+		{ header: 'USDT', totalDepo: 6.19, depo: 0, earn: 0 },
+		{ header: 'USDY', totalDepo: 6.19, depo: 0, earn: 0 }
+	];
 
 	let contentPosition = [
 		{ title: 'Your Collateral Ratio', data: 0.00 },
@@ -22,21 +46,42 @@
 				<div>0</div>
 			</div>
 		</div>
-		<div class="flex w-full bg-[#aee]/10 backdrop-blur-sm rounded-lg p-1">
+		<div class="flex w-full gap-x-2 bg-[#aee]/10 backdrop-blur-sm rounded-lg p-1">
 			<input class="w-full bg-transparent rounded-l-lg !border-none" />
-			<div class="flex justify-center items-center gap-2 bg-[#232f33] rounded-md px-2">
+			<button class="relative flex justify-center items-center gap-2 bg-[#213035] rounded-md px-2" on:click={(()=>{showTank = !showTank})}>
 				<div class="w-9 h-9 flex justify-center items-center">
 					<img
-						src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fbuck-icon.png&w=32&q=75"
+						src={imgSelect}
 						alt=""
 					/>
 				</div>
-				<div class="font-bold text-center w-full">BUCK</div>
-			</div>
+				<div class=" font-bold text-center w-full" >{headSelect}</div>
+                
+                {#if showTank}
+                    <div class="absolute z-[50] flex flex-col top-[100%] w-[110px] bg-[#213035] backdrop-blur-sm border border-gray-600 rounded-lg" in:slide out:slide>
+                        {#each pool as tank}
+                                <button class="flex justify-start items-center gap-x-2 p-2" on:click={(()=>{
+                                    console.log(tank);
+                                    headSelect = tank.header;
+                                    imgSelect = imgTANK;
+                                    
+                                })}>
+                                    <div class="w-4 h-4">
+                                        <img src="https://app.bucketprotocol.io/images/vsui-icon.svg" alt="">
+                                    </div>
+                                    <div>
+                                        {tank.header}
+                                    </div>
+
+                                </button>
+                        {/each}
+                    </div>
+                {/if}
+			</button>
 		</div>
 	</div>
 
-	<div class="space-y-1">
+	<div class="space-y-1 z-[-1]">
 		<div class="flex justify-between text-sm font-semibold">
 			<p>Borrow $BUCK</p>
 			<div class="flex gap-2">
@@ -46,7 +91,7 @@
                 </div>
 			</div>
 		</div>
-		<div class="flex w-full bg-[#aee]/10 backdrop-blur-sm rounded-lg p-1">
+		<div class="flex w-full gap-x-2 bg-[#aee]/10 backdrop-blur-sm rounded-lg p-1">
 			<input class="w-full bg-transparent rounded-l-lg !border-none" />
 			<div class="flex justify-center items-center gap-2 bg-[#232f33] rounded-md px-2">
 				<div class="w-9 h-9 flex justify-center items-center">
@@ -60,7 +105,10 @@
 		</div>
 	</div>
 
-	<Button >Connect</Button>
+	<Button handler={(()=>{
+        console.log('Click Connect Button');
+        
+    })}>Connect</Button>
 	<div class="border border-gray-500 rounded-lg p-4 space-y-2">
         {#each contentPosition as positiondetails}
         <div class="flex justify-between font-semibold text-sm md:text-md">
