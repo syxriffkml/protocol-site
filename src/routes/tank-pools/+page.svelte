@@ -8,60 +8,15 @@
     let header=['SUI','afSUI','vSUI','haSUI','afSUI/SUI','WETH','USDC','USDT','USDY',]
     let pool =
     [
-        {
-        header:'SUI',
-        totalDepo:6.19,
-        depo:0,
-        earn:0
-        },
-        {
-        header:'SUI',
-        totalDepo:6.19,
-        depo:0,
-        earn:0
-        },
-        {
-        header:'SUI',
-        totalDepo:6.19,
-        depo:0,
-        earn:0
-        },
-        {
-        header:'SUI',
-        totalDepo:6.19,
-        depo:0,
-        earn:0
-        },
-        {
-        header:'SUI',
-        totalDepo:6.19,
-        depo:0,
-        earn:0
-        },
-        {
-        header:'SUI',
-        totalDepo:6.19,
-        depo:0,
-        earn:0
-        },
-        {
-        header:'SUI',
-        totalDepo:6.19,
-        depo:0,
-        earn:0
-        },
-        {
-        header:'SUI',
-        totalDepo:6.19,
-        depo:0,
-        earn:0
-        },
-        {
-        header:'SUI',
-        totalDepo:6.19,
-        depo:0,
-        earn:0
-        },
+        { header:'SUI', totalDepo:6.19, depo:0, earn:0 },
+        { header:'SUI', totalDepo:6.19, depo:0, earn:0 },
+        { header:'SUI', totalDepo:6.19, depo:0, earn:0 },
+        { header:'SUI', totalDepo:6.19, depo:0, earn:0 },
+        { header:'SUI', totalDepo:6.19, depo:0, earn:0 },
+        { header:'SUI', totalDepo:6.19, depo:0, earn:0 },
+        { header:'SUI', totalDepo:6.19, depo:0, earn:0 },
+        { header:'SUI', totalDepo:6.19, depo:0, earn:0 },
+        { header:'SUI', totalDepo:6.19, depo:0, earn:0 },
     ]
 
 </script>
@@ -96,7 +51,7 @@
             </div>
         </div>
 
-        <div class="grid grid-cols-1 xl:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2  xl:grid-cols-3 gap-6">
             <div class="flex col-span-1 xl:col-span-2">
                 <div class="hidden xl:block w-[54px]"/>
                 <SectionImage height={"h-full"} margin={"mt-0"}>
@@ -163,7 +118,7 @@
                             Deposit
                         </Button>
                         <Button mode={"blue-inverted"} customClass={"w-full"}>
-                            Deposit
+                            Withdraw
                         </Button>
                     </div>
 

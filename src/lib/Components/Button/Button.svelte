@@ -39,7 +39,7 @@
     }
 
     .isBlueInverted{
-        @apply bg-black text-[#aeecff] py-2 px-4 rounded-full border-2 border-[#aeecff] hover:scale-105 transition;
+        @apply bg-transparent backdrop-blur-sm text-[#aeecff] py-2 px-4 rounded-full border-2 border-[#aeecff] hover:scale-105 transition;
     }
 
     .side {
