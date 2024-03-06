@@ -29,22 +29,22 @@
 
 <div class=" flex flex-col xl:max-w-[90rem] items-start mx-auto w-full p-6 gap-y-4">
 	<div class="p-2 w-full">
-		<div class="flex justify-between gap-x-2 p-10">
+		<div class="flex flex-wrap xl:flex-nowrap justify-between gap-y-4 gap-x-2 p-10">
 			<div class="w-1/3 text-center">
 				<div class="text-sm text-slate-500 font-bold">TANK POOL TVL</div>
 				<div class="text-4xl font-semibold">$ 0</div>
 			</div>
 			<div
-				class="shrink-0 bg-border hidden h-28 w-[1px] bg-gradient-to-b from-[#86DDF8] to-[#86DDF800] md:block xl:h-29.5"
+				class="shrink-0 bg-border  h-28 w-[1px] bg-gradient-to-b from-[#86DDF8] to-[#86DDF800] xl:h-29.5"
 			/>
 			<div class="w-1/3 text-center">
 				<div class="text-sm text-slate-500 font-bold">Your BUCK in tank</div>
 				<div class="text-4xl font-semibold">$ 0</div>
 			</div>
 			<div
-				class="shrink-0 bg-border hidden h-28 w-[1px] bg-gradient-to-b from-[#86DDF8] to-[#86DDF800] md:block xl:h-29.5"
+				class="shrink-0 bg-border hidden h-28 w-[1px] bg-gradient-to-b from-[#86DDF8] to-[#86DDF800] xl:block xl:h-29.5"
 			/>
-			<div class="w-1/3 text-center">
+            <div class="w-full xl:w-1/3 text-center">
 				<div class="text-sm text-slate-500 font-bold">Your BUCK balance</div>
 				<div class="text-4xl font-semibold">$ 0</div>
 			</div>

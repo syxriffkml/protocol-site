@@ -37,7 +37,7 @@
 	</div>
 
 	<div class="space-y-1">
-		<div class="flex justify-between text-sm">
+		<div class="flex justify-between text-sm font-semibold">
 			<p>Borrow $BUCK</p>
 			<div class="flex gap-2">
 				<div>Auto safe borrow</div>
