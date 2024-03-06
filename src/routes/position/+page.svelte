@@ -41,16 +41,20 @@
                     Content
                 </div>
             </Section> -->
-            <Section customClass={"w-[80%] mx-auto xl:mx-0 xl:max-w-[300px] p-6"} animate={true}>
-                <div class="flex flex-col items-center justify-center xl:h-[350px] gap-2">
-                    <div class="w-fit bg-[#aeecff] rounded-full">
-                        <Icon icon="ic:outline-plus" class="w-7 h-7 text-black" />
+            <button class="w-[80%] mx-auto xl:mx-0 xl:max-w-[300px]" on:click={()=>{console.log('CLicked!');
+            }}>
+                <Section customClass={""} animate={true}>
+                    <div class="flex flex-col items-center justify-center xl:h-[350px] gap-2">
+                        <div class="w-fit bg-[#aeecff] rounded-full">
+                            <Icon icon="ic:outline-plus" class="w-7 h-7 text-black" />
+                        </div>
+                        <p>
+                            Create Position
+                        </p>
                     </div>
-                    <p>
-                        Create Position
-                    </p>
-                </div>
-            </Section>
+                </Section>
+            </button>
+
         </div>
             
     </div>

@@ -14,6 +14,6 @@
         transition: transform 0.3s ease;
     }
     .box:hover {
-        transform: translateY(-20px); /* Adjust the value as needed */
+        transform: translateY(-5px); /* Adjust the value as needed */
     }
 </style>
