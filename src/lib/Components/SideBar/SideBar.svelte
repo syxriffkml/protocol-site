@@ -24,9 +24,9 @@
 </script>
 
 <!-- prettier-ignore -->
-<div class="hidden xl:flex flex-col justify-between bg-black h-full w-full p-8">
-    <div class="flex items-center justify-center w-full mb-8">
-        <img src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fbucket-text-logo.png&w=256&q=75" alt="img" class="w-[120px] h-auto">
+<div class="hidden xl:flex flex-col justify-between bg-black h-full w-full p-6">
+    <div class="flex items-center justify-center w-full mb-12">
+        <img src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fbucket-text-logo.png&w=256&q=75" alt="img" class="w-[140px] h-auto">
     </div>
 
     <div class="w-full flex-grow space-y-3">
@@ -43,7 +43,7 @@
     <div class="flex flex-col gap-y-2">
         <p class="text-[#aeecff] text-sm">Audited By</p>
         <div class="flex flex-row gap-x-2">
-            <img src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fottersec-logo.png&w=128&q=75" alt="img" class="w-[120px] h-auto">
+            <img src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fottersec-logo.png&w=128&q=75" alt="img" class="w-[90px] h-auto">
             <img src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fmovebit-logo.png&w=256&q=75" alt="img" class="w-[140px] h-auto">
         </div>
     </div>
