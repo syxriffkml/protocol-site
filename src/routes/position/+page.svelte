@@ -14,7 +14,7 @@
                     $ 0
                 </div>
             </div>
-            <div class="border" />
+            <div class="shrink-0 bg-border hidden h-28 w-[1px] bg-gradient-to-b from-[#86DDF8] to-[#86DDF800] md:block xl:h-29.5" />
             <div class="w-1/3 text-center">
                 <div class="text-sm text-slate-500 font-bold">
                     Your Debt
@@ -23,7 +23,7 @@
                     $ 0
                 </div>
             </div>
-            <div class="border" />
+            <div class="shrink-0 bg-border hidden h-28 w-[1px] bg-gradient-to-b from-[#86DDF8] to-[#86DDF800] md:block xl:h-29.5" />
             <div class="w-1/3 text-center">
                 <div class="text-sm text-slate-500 font-bold">
                     Total Collateral Ratio
@@ -43,7 +43,7 @@
             </Section> -->
             <button class="w-[80%] mx-auto xl:mx-0 xl:max-w-[300px]" on:click={()=>{console.log('CLicked!');
             }}>
-                <Section customClass={""} animate={true}>
+                <Section customClass={""} animate={"floating"}>
                     <div class="flex flex-col items-center justify-center xl:h-[350px] gap-2">
                         <div class="w-fit bg-[#aeecff] rounded-full">
                             <Icon icon="ic:outline-plus" class="w-7 h-7 text-black" />

@@ -4,13 +4,16 @@
 	import Button from "$lib/Components/Button/Button.svelte";
 
     export let header:string = 'haSUI'
+    export let animate:'floating' | 'floating-shadow' | 'floating-none' = 'floating-none';
+
+
 
 </script>
 
 <div class="flex ">
     <div class="hidden xl:block xl:w-[54px]" />
     <div class="w-full">
-        <Section customClass={"relative min-w-[40%] space-y-4 pt-8 px-8 pb-6"} animate={true}>
+        <Section customClass={"relative min-w-[40%] space-y-4 pt-8 px-8 pb-6"} {animate}>
             <div class="pt-4">
                 <div class="xl:-translate-x-[65px] -translate-y-[30px] absolute bg-white z-50  rounded-full p-1.5">
                     <img src="https://app.bucketprotocol.io/images/vsui-icon.svg" alt="">

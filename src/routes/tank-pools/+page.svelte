@@ -31,7 +31,7 @@
                     $ 0
                 </div>
             </div>
-            <div class="border" />
+            <div class="shrink-0 bg-border hidden h-28 w-[1px] bg-gradient-to-b from-[#86DDF8] to-[#86DDF800] md:block xl:h-29.5" />
             <div class="w-1/3 text-center">
                 <div class="text-sm text-slate-500 font-bold">
                     Your BUCK in tank
@@ -40,7 +40,7 @@
                     $ 0
                 </div>
             </div>
-            <div class="border" />
+            <div class="shrink-0 bg-border hidden h-28 w-[1px] bg-gradient-to-b from-[#86DDF8] to-[#86DDF800] md:block xl:h-29.5" />
             <div class="w-1/3 text-center">
                 <div class="text-sm text-slate-500 font-bold">
                     Your BUCK balance
@@ -84,14 +84,14 @@
             </div>
 
             {#each pool as head}          
-                <SectionOverflow header={head.header}>
+                <SectionOverflow header={head.header} animate={"floating-shadow"}>
 
                     <div class="w-[90%]">
                         <div>
                             total deposited
                         </div>
                         <div class="text-2xl">
-                            6.19k
+                            {head.totalDepo}k
                         </div>
                         <div class="flex justify-between gap-4">
                             <div class="w-full">
@@ -99,7 +99,7 @@
                                     Deposited $BUCK
                                 </p>
                                 <div>
-                                    0
+                                    {head.depo}
                                 </div>
                             </div>
                             <div class="w-full">
@@ -107,7 +107,7 @@
                                     Earned {head.header}
                                 </p>
                                 <div>
-                                    0
+                                    {head.earn}
                                 </div>
                             </div>
                         </div>
