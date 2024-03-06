@@ -5,12 +5,12 @@
 
     export let header:string = 'haSUI'
     export let animate:'floating' | 'floating-shadow' | 'floating-none' = 'floating-none';
-
+    export let width: string = 'w-auto'
 
 
 </script>
 
-<div class="flex w-auto">
+<div class="flex {width}">
     <div class="hidden xl:block xl:min-w-[54px]" />
     <Section customClass={"relative w-full space-y-4 pt-8 px-8 pb-6"} {animate}>
         <div class="pt-4">
