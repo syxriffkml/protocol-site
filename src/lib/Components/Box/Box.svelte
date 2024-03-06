@@ -5,7 +5,7 @@
 
 </script>
 
-<div class="border border-gray-700 bg-gray-800/50 backdrop-blur-sm {customClass} p-4 rounded-md {animate? 'box':''}" >
+<div class="border border-gray-700 bg-[#aeecff]/5 backdrop-blur-sm {customClass} p-4 rounded-md {animate? 'box':''}" >
     <slot></slot>
 </div>
 

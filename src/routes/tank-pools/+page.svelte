@@ -51,7 +51,7 @@
             </div>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2  xl:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2  xl:grid-cols-3 gap-6 mt-10">
             <div class="flex col-span-1 xl:col-span-2">
                 <div class="hidden xl:block w-[54px]"/>
                 <SectionImage height={"h-full"} margin={"mt-0"}>
@@ -67,7 +67,7 @@
                                 </p>
                             </div>
                             <div class="flex gap-2">
-                                <Button>
+                                <Button handler={(()=>{window.location.href = '/position'})}>
                                     Add Position
                                 </Button>
                                 <Button mode={"blue-inverted"}>
