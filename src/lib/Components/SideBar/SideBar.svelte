@@ -2,38 +2,23 @@
     import Button from "../Button/Button.svelte";
     import Icon from '@iconify/svelte';
 
-    let tabs =['Overview','Dashboard','Position','Tank Pools','Fountain','Peg','Bridges',]
-
-
-
+    let tabs = [
+        {name: 'Overview', icon: 'material-symbols:home-outline-rounded', href: '/'},
+        {name: 'Dashboard', icon: 'bi:play', href: '/dashboard'},
+        {name: 'Position', icon: 'mdi:plus', href: '/position'},
+        {name: 'Tank Pools', icon: 'ion:water-outline', href: '/tank-pools'},
+        {name: 'Fountain', icon: 'gg:arrow-up-o', href: '/fountain'},
+        {name: 'Peg', icon: 'icon-park-outline:transfer-data', href: '/peg'},
+        {name: 'Bridges', icon: 'mingcute:bridge-fill', href: '/bridges'}
+    ];
 
     /**
      * Handling Click to go each page
      * @param tab tab indicate pages
      */
-	function handleClickTab(tab: string) {
-		if (tab === tabs[0]) {
-            window.location.href='/' ;
-        }
-        else if(tab === tabs[1]) {
-            window.location.href='/dashboard' ;
-        }
-        else if(tab === tabs[2]) {
-            window.location.href='/position' ;
-        }
-        else if(tab === tabs[3]) {
-            window.location.href='/tank-pools' ;
-        }
-        else if(tab === tabs[4]) {
-            window.location.href='/fountain' ;
-        }
-        else if(tab === tabs[5]) {
-            window.location.href='/peg' ;
-        }
-        else if(tab === tabs[6]) {
-            window.location.href='/bridges' ;
-        }
-	}
+     function handleClickTab(tab: any) {
+        window.location.href = tab.href;
+    }
 
 </script>
 
@@ -44,30 +29,12 @@
 
     <div class="w-full flex-grow space-y-2">
         {#each tabs as tab}
-        <Button width="w-full" mode="side" customClass="h-14" handler={(()=>{
-            handleClickTab(tab);
-        })}>
-            <p class="flex items-center justify-start gap-x-4">
-
-                {#if tab === 'Overview'}
-                <Icon icon="material-symbols:home-outline-rounded" class="w-8 h-8"/>
-                {:else if tab === 'Dashboard'}
-                <Icon icon="ph:play-bold" class="w-7 h-7"/>
-                {:else if tab === 'Position'}
-                <Icon icon="mdi:plus" class="w-8 h-8"/>
-                {:else if tab === 'Tank Pools'}
-                <Icon icon="ion:water-outline" class="w-8 h-8" />
-                {:else if tab === 'Fountain'}
-                <Icon icon="gg:arrow-up-o" class="w-8 h-8" />
-                {:else if tab === 'Peg'}
-                <Icon icon="icon-park-outline:transfer-data" class="w-8 h-8" />
-                {:else if tab === 'Bridges'}
-                <Icon icon="mingcute:bridge-fill" class="w-8 h-8" />
-                {/if}
-
-                <span class="text-lg font-normal">{tab}</span>
-            </p>
-        </Button>
+            <Button width="w-full" mode="side" customClass="h-14" handler={(()=>{ handleClickTab(tab); })}>
+                <p class="flex items-center justify-start gap-x-4">
+                    <Icon icon={tab.icon} class="w-8 h-8"/>
+                    <span class="text-lg font-normal">{tab.name}</span>
+                </p>
+            </Button>
         {/each}
     </div>
 

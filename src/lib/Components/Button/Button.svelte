@@ -42,7 +42,15 @@
         @apply bg-black text-[#aeecff] py-2 px-4 rounded-full border-2 border-[#aeecff] hover:scale-105 transition;
     }
 
-    .side{
-        @apply bg-[#141b1d] text-[#aeecff] py-2 px-4 rounded-lg hover:drop-shadow-[0px_0px_2px_#76b5c3];
+    .side {
+        @apply text-[#aeecff] py-2 px-4 rounded-lg relative z-[1];
+        background: conic-gradient(from 202deg at 50% 50%, #202f34 42.57809400558472deg, #65e0fc 94.842449426651deg, #a7edfd 106.2618899345398deg, #65e0fc 119.4994604587555deg, #202f34 187.49999284744263deg, #202f34 260.7220673561096deg, #9beeff 286.23008966445923deg, #202f34 308.08024406433105deg);
+
+    }
+
+    .side::before {
+        content: "";
+        @apply bg-[#141b1d] inset-px absolute z-[-1];
+        border-radius: inherit;
     }
 </style>
