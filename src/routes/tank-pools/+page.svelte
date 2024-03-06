@@ -5,17 +5,18 @@
     import SectionOverflow from "$lib/Components/Box/BoxOverFlow.svelte";
     import SectionImage from "$lib/Components/Box/BoxImage.svelte";
 
+    let header=['SUI','afSUI','vSUI','haSUI','afSUI/SUI','WETH','USDC','USDT','USDY',]
     let pool =
     [
         { header:'SUI', totalDepo:6.19, depo:0, earn:0 },
-        { header:'SUI', totalDepo:6.19, depo:0, earn:0 },
-        { header:'SUI', totalDepo:6.19, depo:0, earn:0 },
-        { header:'SUI', totalDepo:6.19, depo:0, earn:0 },
-        { header:'SUI', totalDepo:6.19, depo:0, earn:0 },
-        { header:'SUI', totalDepo:6.19, depo:0, earn:0 },
-        { header:'SUI', totalDepo:6.19, depo:0, earn:0 },
-        { header:'SUI', totalDepo:6.19, depo:0, earn:0 },
-        { header:'SUI', totalDepo:6.19, depo:0, earn:0 },
+        { header:'afSUI', totalDepo:6.19, depo:0, earn:0 },
+        { header:'vSUI', totalDepo:6.19, depo:0, earn:0 },
+        { header:'haSUI', totalDepo:6.19, depo:0, earn:0 },
+        { header:'afSUI/SUI', totalDepo:6.19, depo:0, earn:0 },
+        { header:'WETH', totalDepo:6.19, depo:0, earn:0 },
+        { header:'USDC', totalDepo:6.19, depo:0, earn:0 },
+        { header:'USDT', totalDepo:6.19, depo:0, earn:0 },
+        { header:'USDY', totalDepo:6.19, depo:0, earn:0 },
     ]
 
 </script>
