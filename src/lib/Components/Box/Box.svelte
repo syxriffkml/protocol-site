@@ -17,15 +17,17 @@
      .floating {
         transition: transform 0.3s ease;
     }
+
     .floating:hover {
         transform: translateY(-5px); /* Adjust the value as needed */
     }
+
     .floating-shadow {
     transition: transform 0.3s ease;
     }
 
     .floating-shadow:hover {
-        transform: translateY(-5px); /* Adjust the value as needed */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adjust the shadow properties as needed */
+        transform: translateY(-5px) translateX(-5px);        
+        box-shadow: 3px 10px 20px rgba(174, 236, 255, 1);
     }
 </style>

@@ -29,7 +29,7 @@
         <img src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fbucket-text-logo.png&w=256&q=75" alt="img" class="w-[120px] h-auto">
     </div>
 
-    <div class="w-full flex-grow space-y-2">
+    <div class="w-full flex-grow space-y-3">
         {#each tabs as tab}
             <Button width="w-full" mode="side" customClass="h-14" handler={(()=>{ handleClickTab(tab); })}>
                 <p class="flex items-center justify-start gap-x-4">
