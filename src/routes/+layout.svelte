@@ -9,7 +9,7 @@
 	storePopup.set({ computePosition, autoUpdate, flip, shift, offset, arrow });
 </script>
 
-<div class="bg-slate-900 flex flex-row">
+<div class="bg-[#0e1719] flex flex-row">
 	<div class="w-[22rem] hidden xl:block fixed h-screen">
 		<SideBar/>
 	</div>

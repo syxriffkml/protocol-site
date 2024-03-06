@@ -1,8 +1,9 @@
 <script lang="ts">
 
+    export let customClass: string = '';
 </script>
 
-<div class="banner bg-[#232f33] rounded-lg w-full h-[272px] p-10 mt-10">
+<div class="banner bg-[#232f33] rounded-lg w-full h-[272px] p-10 mt-10 {customClass}">
     <slot/>
 </div>
 
