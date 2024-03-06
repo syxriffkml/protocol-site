@@ -83,22 +83,22 @@
 			{#each pool as head}
 				<SectionOverflow header={head.header} animate={'floating'}>
 					<div class="w-[90%]">
-						<div>total deposited</div>
+						<div class="text-[#aeecff] font-semibold text-sm ">total deposited</div>
 						<div class="text-2xl">
-							{head.totalDepo}k
+							{head.totalDepo} k
 						</div>
 						<div class="flex justify-between gap-4">
 							<div class="w-full">
-								<p class="text-sm whitespace-nowrap">Deposited $BUCK</p>
-								<div>
+								<p class="text-sm whitespace-nowrap text-[#aeecff] font-semibold">Deposited $BUCK</p>
+								<div class="text-xl">
 									{head.depo}
 								</div>
 							</div>
 							<div class="w-full">
-								<p class="text-sm whitespace-nowrap">
+								<p class="text-[#aeecff] font-semibold text-sm whitespace-nowrap">
 									Earned {head.header}
 								</p>
-								<div>
+								<div class="text-xl">
 									{head.earn}
 								</div>
 							</div>
