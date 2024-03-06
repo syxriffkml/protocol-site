@@ -1,9 +1,6 @@
 <script lang="ts">
     import Section from "$lib/Components/Box/Box.svelte"
     import Icon from "@iconify/svelte";
-
-
-
 </script>
 
 <div class="h-[200vh] flex flex-col xl:max-w-[90rem] items-start mx-auto w-full p-6 gap-y-4">

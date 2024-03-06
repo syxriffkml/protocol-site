@@ -19,7 +19,7 @@
         }
 	}
 </script>
-<div class="h-[200vh] flex flex-col xl:w-[90rem] items-start mx-auto w-full p-6 gap-y-4">
+<div class="h-[200vh] flex flex-col xl:max-w-[90rem] items-start mx-auto w-full p-6 gap-y-4">
     <p class="block xl:hidden mx-auto text-2xl font-semibold">
         Dashboard
     </p>
