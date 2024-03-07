@@ -26,13 +26,13 @@
 	let pool = [
 		{ header: 'SUI', totalDepo: 6.19, depo: 0, earn: 0 },
 		{ header: 'afSUI', totalDepo: 6.19, depo: 0, earn: 0 },
-		// { header: 'vSUI', totalDepo: 6.19, depo: 0, earn: 0 },
-		// { header: 'haSUI', totalDepo: 6.19, depo: 0, earn: 0 },
-		// { header: 'afSUI/SUI', totalDepo: 6.19, depo: 0, earn: 0 },
-		// { header: 'WETH', totalDepo: 6.19, depo: 0, earn: 0 },
-		// { header: 'USDC', totalDepo: 6.19, depo: 0, earn: 0 },
-		// { header: 'USDT', totalDepo: 6.19, depo: 0, earn: 0 },
-		// { header: 'USDY', totalDepo: 6.19, depo: 0, earn: 0 }
+		{ header: 'vSUI', totalDepo: 6.19, depo: 0, earn: 0 },
+		{ header: 'haSUI', totalDepo: 6.19, depo: 0, earn: 0 },
+		{ header: 'afSUI/SUI', totalDepo: 6.19, depo: 0, earn: 0 },
+		{ header: 'WETH', totalDepo: 6.19, depo: 0, earn: 0 },
+		{ header: 'USDC', totalDepo: 6.19, depo: 0, earn: 0 },
+		{ header: 'USDT', totalDepo: 6.19, depo: 0, earn: 0 },
+		{ header: 'USDY', totalDepo: 6.19, depo: 0, earn: 0 }
 	];
 
 	let contentPosition = [
@@ -64,7 +64,14 @@
                         alt=""
                     />
                 </div>
-                <div class=" font-bold text-center w-full" >{headSelect}</div>
+                <div class="flex justify-end items-center font-bold text-center w-full" >
+                    <div>
+                        {headSelect}
+                    </div>    
+                    <div>
+                        <Icon icon="iconamoon:arrow-left-2" class="w-6 h-6" rotate={3} />
+                    </div>
+                </div>
                 {#if showTank}
                     <div class="absolute z-9999 top-[100%] right-0 flex flex-col h-[100px] overflow-y-scroll w-[140px] bg-[#213035] border border-gray-600 rounded-lg " in:slide out:slide>
                         {#each pool as tank}
