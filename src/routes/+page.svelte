@@ -111,9 +111,7 @@
 						
 						<HoverPopup 
 							header="Total value locked" 
-							content="Total value locked in Bucket. Including collateral value,
-								BUCK in tank pools, LP tokens locked in Bucket 
-								fountain and PSM tokens." 
+							content="Total value locked in Bucket. Including collateral value, BUCK in tank pools, LP tokens locked in Bucket fountain and PSM tokens." 
 						>
 							<Icon icon="ep:question-filled" class="text-white/50 w-5 h-5"/>
 						</HoverPopup>
