@@ -3,6 +3,7 @@
 	import Modal from "$lib/Components/Modal/Index/Modal.svelte";
     import PositionModal from "$lib/Components/Modal/ComponentModal/PositionModal.svelte"
     import Icon from "@iconify/svelte";
+	import HoverPopup from "$lib/Components/Popups/HoverPopup.svelte";
 
     let _positionModal : Modal;
 
@@ -21,8 +22,16 @@
             </div>
             <div class="shrink-0 bg-border  h-28 w-[1px] bg-gradient-to-b from-[#86DDF8] to-[#86DDF800] xl:h-29.5" />
             <div class="w-1/3 text-center">
-                <div class="text-sm text-slate-500 font-bold">
-                    Your Debt
+                <div class="flex justify-center items-center gap-2 text-sm text-slate-500 font-bold">
+                    <div>
+                        Your Debt 
+                    </div>
+                    <HoverPopup header="Your Debt" content="How much user should repay to get back all collateral" topPosition={-80}>
+                        <div class="my-auto ">
+                            <Icon icon="material-symbols:help-rounded" width="15" height="15" />
+                        </div>
+                    </HoverPopup>
+
                 </div>
                 <div class="text-4xl font-semibold">
                     $ 0

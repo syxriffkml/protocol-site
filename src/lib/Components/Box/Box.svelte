@@ -5,7 +5,7 @@
 
 </script>
 
-<div class="border border-gray-700 bg-[#aeecff]/5 backdrop-blur-sm {customClass} p-4 rounded-md 
+<div class="border border-gray-700 bg-[#aeecff]/5 backdrop-blur-sm {customClass} p-6 rounded-md 
     { animate === 'floating' ? 'floating' : 
     animate === 'floating-shadow' ? 'floating-shadow' : 
     animate === 'floating-none' ? 'floating-none' : ''}" 

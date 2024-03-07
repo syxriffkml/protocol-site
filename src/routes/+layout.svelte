@@ -11,10 +11,10 @@
 
 <div class="bg-[#0e1719] flex flex-row">
 	<div class="w-[18rem] hidden xl:block fixed h-screen">
-		<SideBar/>
+		<SideBar />
 	</div>
 	<div class="w-full pl-0 xl:pl-[18rem]">
-		<NavBar/>
-		<slot/>
+		<NavBar />
+		<slot />
 	</div>
 </div>

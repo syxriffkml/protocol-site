@@ -3,6 +3,7 @@
 	import Icon from "@iconify/svelte";
     import Button from "$lib/Components/Button/Button.svelte";
     import Section from "$lib/Components/Box/Box.svelte";
+	import HoverPopup from "$lib/Components/Popups/HoverPopup.svelte";
 
     let subAssets=['Positions','Fountain','Pool'];
 
@@ -44,10 +45,11 @@
                         <p class="text-sm font-semibold text-[#aeecff]">
                             Fountain Reward 
                         </p>
-                        <div class="my-auto">
-                            <Icon icon="material-symbols:help-rounded" width="15" height="15"  style="color: #aeecff" />
-                        </div>
-        
+                        <HoverPopup header="Fountain Reward" content="Your reward from Fountain">
+                            <div class="my-auto">
+                                <Icon icon="material-symbols:help-rounded" width="15" height="15"  style="color: #aeecff" />
+                            </div>
+                        </HoverPopup>
                     </div>
         
                     <div class="flex gap-x-2 py-0">

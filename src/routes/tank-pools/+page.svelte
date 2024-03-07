@@ -7,6 +7,7 @@
 	import Modal from '$lib/Components/Modal/Index/Modal.svelte';
 	import DepositModal from '$lib/Components/Modal/ComponentModal/DepositModal.svelte';
     import WithdrawModal from '$lib/Components/Modal/ComponentModal/WithdrawModal.svelte'
+	import HoverPopup from '$lib/Components/Popups/HoverPopup.svelte';
 
 	let _depositModal: Modal;
 
@@ -34,7 +35,17 @@
 	<div class="p-2 w-full">
 		<div class="flex flex-wrap xl:flex-nowrap justify-between gap-y-4 gap-x-2 p-10">
 			<div class="w-1/3 text-center">
-				<div class="text-sm text-slate-500 font-bold">TANK POOL TVL</div>
+				<div class="flex justify-center items-center gap-2 text-sm text-slate-500 font-bold">
+					<div>
+						TANK POOL TVL
+					</div>
+					<HoverPopup header="TANK POOL TVL" content="Total BUCK in all tank pools">
+						<div class="my-auto ">
+							<Icon icon="material-symbols:help-rounded" width="15" height="15" />
+						</div>
+					</HoverPopup>
+
+				</div>
 				<div class="text-4xl font-semibold">$ 0</div>
 			</div>
 			<div

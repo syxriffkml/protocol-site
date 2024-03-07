@@ -45,7 +45,7 @@
 
 	//Start of Default Modal "settings"
 	export let type: 'light' | 'dark' = 'dark';
-	export let z_index = 'z-[9999999999999999]';
+	export let z_index = 'z-[99]';
 
 	export let title = '';
 

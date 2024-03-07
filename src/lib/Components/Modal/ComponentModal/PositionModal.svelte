@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Button from '$lib/Components/Button/Button.svelte';
+	import HoverPopup from '$lib/Components/Popups/HoverPopup.svelte';
     import Icon from "@iconify/svelte";
 	import { fade, slide } from 'svelte/transition';
     
@@ -25,13 +26,13 @@
 	let pool = [
 		{ header: 'SUI', totalDepo: 6.19, depo: 0, earn: 0 },
 		{ header: 'afSUI', totalDepo: 6.19, depo: 0, earn: 0 },
-		{ header: 'vSUI', totalDepo: 6.19, depo: 0, earn: 0 },
-		{ header: 'haSUI', totalDepo: 6.19, depo: 0, earn: 0 },
-		{ header: 'afSUI/SUI', totalDepo: 6.19, depo: 0, earn: 0 },
-		{ header: 'WETH', totalDepo: 6.19, depo: 0, earn: 0 },
-		{ header: 'USDC', totalDepo: 6.19, depo: 0, earn: 0 },
-		{ header: 'USDT', totalDepo: 6.19, depo: 0, earn: 0 },
-		{ header: 'USDY', totalDepo: 6.19, depo: 0, earn: 0 }
+		// { header: 'vSUI', totalDepo: 6.19, depo: 0, earn: 0 },
+		// { header: 'haSUI', totalDepo: 6.19, depo: 0, earn: 0 },
+		// { header: 'afSUI/SUI', totalDepo: 6.19, depo: 0, earn: 0 },
+		// { header: 'WETH', totalDepo: 6.19, depo: 0, earn: 0 },
+		// { header: 'USDC', totalDepo: 6.19, depo: 0, earn: 0 },
+		// { header: 'USDT', totalDepo: 6.19, depo: 0, earn: 0 },
+		// { header: 'USDY', totalDepo: 6.19, depo: 0, earn: 0 }
 	];
 
 	let contentPosition = [
@@ -95,9 +96,13 @@
             <p>Borrow $BUCK</p>
             <div class="flex gap-2">
                 <div>Auto safe borrow</div>
-                <div class="my-auto">
-                    <Icon icon="material-symbols:help-rounded" width="15" height="15"  style="color: #aeecff" />
-                </div>
+                <HoverPopup
+                content="Auto set collateral ratio as 120% for stable collateral or 180% for volatile assets."
+                >
+                    <div class="my-auto">
+                        <Icon icon="material-symbols:help-rounded" width="15" height="15"  style="color: #aeecff" />
+                    </div>
+                </HoverPopup>
             </div>
         </div>
         <div class="flex w-full gap-x-2 bg-[#aee]/10 backdrop-blur-sm rounded-lg p-1">
