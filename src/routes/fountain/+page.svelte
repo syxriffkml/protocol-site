@@ -3,155 +3,304 @@
 	import Icon from '@iconify/svelte';
 	import Section from "$lib/Components/Box/Box.svelte";
     import Modal from "$lib/Components/Modal/Index/Modal.svelte";
+    import { fade } from 'svelte/transition';
 
-    let stakeModal: Modal;
 
-    let inputStaking: string = '';
+    //Modal declaration
+    let stakeModal1: Modal;
+    let stakeModal2: Modal;
+
+    //text input declaration
+    let inputUSDC: string = '';
+    let inputUSDC_BUCK: string = '';
 
     function handleInput(event: any) {
         event.target.value = event.target.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');
-        if (event.target.name === 'stakeInput') {
-            inputStaking = event.target.value;
+        if (event.target.name === 'stakeUSDC') {
+            inputUSDC = event.target.value;
         }
-        // else if (event.target.name === 'claimToken') {
-        //     inputWithdraw = event.target.value;
-        // }
+        else if (event.target.name === 'stakeUSDC_BUCK') {
+            inputUSDC_BUCK = event.target.value;
+        }
+    }
+
+    let supplyBtn: "USDC" | "USDC + BUCK" = "USDC";
+
+    let isDown = true;
+
+    function toggleIcon() {
+        isDown = !isDown;
+        console.log("KriyaDex");
     }
 </script>
 
 
 
-<div class="h-screen w-full flex flex-col xl:max-w-[90rem] items-start mx-auto p-6 gap-y-12">
+<div class="h-full w-full flex flex-col xl:max-w-[90rem] items-start mx-auto xl:mt-16 p-6 gap-y-12">
     <p class="text-3xl font-medium">Stake LP token to earn</p>
 
     <div class="flex flex-col gap-y-8 w-full">
+        <!--Aftermath-->
         <div class="flex flex-col gap-y-4 w-full">
             <p class="flex items-center gap-x-2">
                 <img src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Faftermath-icon.png&w=32&q=75" alt="img" class="w-[30px] h-auto">
                 <span class="text-xl font-semibold">Aftermath</span>
             </p>
-
-            <Section customClass="!p-4">
-                <div class="flex flex-col md:flex-row justify-between w-full gap-y-6 md:gap-y-0">
-                    <div class="flex flex-col gap-y-2">
-                        <p class="text-[#aeecff] font-medium">Pool</p>
-                        <p class="flex flex-row">
-                            <img src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fusdc-icon.png&w=48&q=75" alt="img" class="w-[40px] h-auto z-[0]">
-                            <img src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fbuck-icon.png&w=48&q=75" alt="img" class="w-[40px] h-auto z-[1] -translate-x-4">
-                            <span class="text-xl xl:text-2xl font-medium">USDC-BUCK</span>
-                        </p>
-                    </div>
-
-
-                    <div class="flex flex-row gap-x-12 lg:gap-x-36">
+            <button class="text-left" on:click={stakeModal1.openModal}>
+                <Section customClass="!py-4 !px-8 hover:bg-[#4a5052] group">
+                    <div class="flex flex-col md:flex-row justify-between w-full gap-y-6 md:gap-y-0">
                         <div class="flex flex-col gap-y-2">
-                            <p class="text-[#aeecff] font-medium flex flex-row items-center gap-x-2">
-                                TVL
-                                <Icon icon="ep:question-filled" class="w-4 h-4"/>
+                            <p class="text-[#aeecff] font-medium">Pool</p>
+                            <p class="flex flex-row">
+                                <img src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fusdc-icon.png&w=48&q=75" alt="img" class="w-[40px] h-auto z-[0]">
+                                <img src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fbuck-icon.png&w=48&q=75" alt="img" class="w-[40px] h-auto z-[1] -translate-x-4">
+                                <span class="text-xl xl:text-2xl font-medium">USDC-BUCK</span>
                             </p>
-                            <p class="text-xl xl:text-2xl font-medium">$ 5,748,252</p>
                         </div>
-                        <div class="flex flex-col gap-y-2">
-                            <p class="text-[#aeecff] font-medium flex flex-row items-center gap-x-2">
-                                APR
-                                <Icon icon="ep:question-filled" class="w-4 h-4"/>
-                            </p>
-                            <p class="text-xl xl:text-2xl font-medium">73.59 %</p>
+    
+    
+                        <div class="flex flex-row gap-x-12 lg:gap-x-36">
+                            <div class="flex flex-col gap-y-2">
+                                <p class="text-[#aeecff] font-medium flex flex-row items-center gap-x-2">
+                                    TVL
+                                    <Icon icon="ep:question-filled" class="w-4 h-4"/>
+                                </p>
+                                <p class="text-xl xl:text-2xl font-medium">$ 5,748,252</p>
+                            </div>
+                            <div class="flex flex-col gap-y-2">
+                                <p class="text-[#aeecff] font-medium flex flex-row items-center gap-x-2">
+                                    APR
+                                    <Icon icon="ep:question-filled" class="w-4 h-4"/>
+                                </p>
+                                <p class="text-xl xl:text-2xl font-medium">73.59 %</p>
+                            </div>
+                        </div>
+    
+    
+                        <div class="flex flex-col items-center justify-center">
+                            <!-- <Button width="w-full md:min-w-[200px]" customClass="group-hover:scale-105 transition" handler={(()=>{stakeModal1.openModal();})}>Add and Stake</Button> -->
+                            <div class="bg-[#aeecff] text-black py-2 px-4 group-hover:scale-105 transition w-full md:min-w-[200px] rounded-full flex justify-center items-center">Add and Stake</div>
                         </div>
                     </div>
-
-
-                    <div class="flex flex-col items-center justify-center">
-                        <Button width="w-full md:min-w-[200px]" handler={(()=>{stakeModal.openModal();})}>Add and Stake</Button>
-                    </div>
-                </div>
-            </Section>
+                </Section>
+            </button>
         </div>
+        <!--Cetus-->
         <div class="flex flex-col gap-y-2 w-full">
             <p class="flex items-center gap-x-2">
                 <img src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fcetus-icon.png&w=32&q=75" alt="img" class="w-[30px] h-auto">
                 <span class="text-xl font-semibold">Cetus</span>
             </p>
-            <Section customClass="!p-4">
-                <div class="flex flex-col md:flex-row justify-between w-full gap-y-6 md:gap-y-0">
-                    <div class="flex flex-col gap-y-2">
-                        <p class="text-[#aeecff] font-medium">Pool</p>
-                        <p class="flex flex-row">
-                            <img src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fusdc-icon.png&w=48&q=75" alt="img" class="w-[40px] h-auto z-[0]">
-                            <img src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fbuck-icon.png&w=48&q=75" alt="img" class="w-[40px] h-auto z-[1] -translate-x-4">
-                            <span class="text-xl xl:text-2xl font-medium">BUCK-USDC</span>
-                        </p>
-                    </div>
-
-
-                    <div class="flex flex-row gap-x-12 lg:gap-x-36">
+            <button class="text-left" on:click={stakeModal2.openModal}>
+                <Section customClass="!py-4 !px-8 hover:bg-[#4a5052] group">
+                    <div class="flex flex-col md:flex-row justify-between w-full gap-y-6 md:gap-y-0">
                         <div class="flex flex-col gap-y-2">
-                            <p class="text-[#aeecff] font-medium flex flex-row items-center gap-x-2">
-                                TVL
-                                <Icon icon="ep:question-filled" class="w-4 h-4"/>
+                            <p class="text-[#aeecff] font-medium">Pool</p>
+                            <p class="flex flex-row">
+                                <img src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fbuck-icon.png&w=48&q=75" alt="img" class="w-[40px] h-auto z-[0]"> 
+                                <img src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fusdc-icon.png&w=48&q=75" alt="img" class="w-[40px] h-auto z-[1] -translate-x-4">
+                                <span class="text-xl xl:text-2xl font-medium">BUCK-USDC</span>
                             </p>
-                            <p class="text-xl xl:text-2xl font-medium">$ 5,748,252</p>
                         </div>
-                        <div class="flex flex-col gap-y-2">
-                            <p class="text-[#aeecff] font-medium flex flex-row items-center gap-x-2">
-                                APR
-                                <Icon icon="ep:question-filled" class="w-4 h-4"/>
-                            </p>
-                            <p class="text-xl xl:text-2xl font-medium">73.59 %</p>
+    
+    
+                        <div class="flex flex-row gap-x-12 lg:gap-x-36">
+                            <div class="flex flex-col gap-y-2">
+                                <p class="text-[#aeecff] font-medium flex flex-row items-center gap-x-2">
+                                    TVL
+                                    <Icon icon="ep:question-filled" class="w-4 h-4"/>
+                                </p>
+                                <p class="text-xl xl:text-2xl font-medium">$ 9,652,448</p>
+                            </div>
+                            <div class="flex flex-col gap-y-2">
+                                <p class="text-[#aeecff] font-medium flex flex-row items-center gap-x-2">
+                                    APR
+                                    <Icon icon="ep:question-filled" class="w-4 h-4"/>
+                                </p>
+                                <p class="text-xl xl:text-2xl font-medium">72.97 %</p>
+                            </div>
+                        </div>
+    
+    
+                        <div class="flex flex-col items-center justify-center">
+                            <!-- <Button width="w-full md:min-w-[200px]" customClass="group-hover:scale-105 transition" handler={(()=>{stakeModal2.openModal();})}>Add and Stake</Button> -->
+                            <div class="bg-[#aeecff] text-black py-2 px-4 group-hover:scale-105 transition w-full md:min-w-[200px] rounded-full flex justify-center items-center">Add and Stake</div>
                         </div>
                     </div>
-
-
-                    <div class="flex flex-col items-center justify-center">
-                        <Button width="w-full md:min-w-[200px]" handler={(()=>{stakeModal.openModal();})}>Add and Stake</Button>
-                    </div>
-                </div>
-            </Section>
+                </Section>
+            </button>
         </div>
+        <!--KriyaDEX-->
         <div class="flex flex-col gap-y-2 w-full">
             <p class="flex items-center gap-x-2">
                 <img src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fkriya-icon.png&w=32&q=75" alt="img" class="w-[30px] h-[35px]">
                 <span class="text-xl font-semibold">KriyaDEX</span>
             </p>
-            <Section customClass="!p-4">
-                3
-            </Section>
+            <button class="text-left" on:click={toggleIcon}>
+                <Section customClass="!py-4 !px-8 hover:bg-[#4a5052] group">
+                    <div class="flex flex-col md:flex-row justify-between w-full gap-y-6 md:gap-y-0">
+                        <div class="flex flex-col gap-y-2">
+                            <p class="text-[#aeecff] font-medium">Pool</p>
+                            <p class="flex flex-row">
+                                <img src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fbuck-icon.png&w=48&q=75" alt="img" class="w-[40px] h-auto z-[0]"> 
+                                <img src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fusdc-icon.png&w=48&q=75" alt="img" class="w-[40px] h-auto z-[1] -translate-x-4">
+                                <span class="text-xl xl:text-2xl font-medium">BUCK-USDC</span>
+                            </p>
+                        </div>
+    
+    
+                        <div class="flex flex-row gap-x-12 lg:gap-x-36">
+                            <div class="flex flex-col gap-y-2">
+                                <p class="text-[#aeecff] font-medium flex flex-row items-center gap-x-2">
+                                    TVL
+                                    <Icon icon="ep:question-filled" class="w-4 h-4"/>
+                                </p>
+                                <p class="text-xl xl:text-2xl font-medium">$ 9,652,448</p>
+                            </div>
+                            <div class="flex flex-col gap-y-2">
+                                <p class="text-[#aeecff] font-medium flex flex-row items-center gap-x-2">
+                                    APR
+                                    <Icon icon="ep:question-filled" class="w-4 h-4"/>
+                                </p>
+                                <p class="text-xl xl:text-2xl font-medium">72.97 %</p>
+                            </div>
+                        </div>
+    
+    
+                        <div class="hidden md:flex flex-row items-center justify-end pr-6 w-[200px]">
+                            {#if isDown}
+                                <div in:fade={{ duration: 500 }}>
+                                    <Icon icon="mingcute:down-line" class="w-8 h-8 text-[#aeecff]"/>
+                                </div>
+                            {:else}
+                                <div in:fade={{ duration: 500 }}>
+                                    <Icon icon="mingcute:up-line" class="w-8 h-8 text-[#aeecff]"/>
+                                </div>
+                            {/if}
+                        </div>
+                    </div>
+                </Section>
+            </button>
         </div>
     </div>
 
 </div>
 
 
-<Modal bind:this={stakeModal} type="dark">
+<Modal bind:this={stakeModal1} type="dark" desktopWidth="max-w-[452px]">
     <div class="px-4 flex flex-col gap-y-6 mb-6">
         <p class="font-bold text-2xl md:text-3xl">Provide Liquidity</p>
 
         <div class="flex flex-col gap-y-2">
             <p class="font-semibold text-lg">Choose method to supply</p>
             <div class="flex flex-row flex-wrap gap-4">
-                <button class="flex flex-row items-center gap-x-2 bg-white/25 px-4 py-2 rounded-lg">
-                    <img src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fusdc-icon.png&w=48&q=75" alt="img" class="w-[25px] h-auto">
-                    <p>USDC</p>
+                <button on:click={() => supplyBtn = "USDC"} class="flex flex-row items-center gap-x-2 px-2 py-1 rounded-md {supplyBtn === 'USDC' ? 'bg-white/25' : 'bg-white/10'}">
+                    <img src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fusdc-icon.png&w=48&q=75" alt="img" class="w-[20px] h-auto">
+                    <p class="text-md ">USDC</p>
                 </button>
-                <button class="flex flex-row items-center gap-x-2 bg-white/10 px-4 py-2 rounded-lg">
-                    <img src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fusdc-icon.png&w=48&q=75" alt="img" class="w-[25px] h-auto">
-                    <p>USDC + BUCK</p>
+                <button on:click={() => supplyBtn = "USDC + BUCK"} class="flex flex-row items-center gap-x-2 px-2 py-1 rounded-md {supplyBtn === 'USDC' ? 'bg-white/10' : 'bg-white/25'}">
+                    <img src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fusdc-icon.png&w=48&q=75" alt="img" class="w-[20px] h-auto">
+                    <p class="text-md ">USDC + BUCK</p>
                 </button>
             </div>
         </div>
 
-        <div class="flex flex-col w-full">
+        <!--USDC-->
+        <div class="flex flex-col w-full gap-y-1">
             <div class="flex flex-row justify-between items-center">
                 <p class="font-semibold text-lg">USDC budget</p>
                 <p class="text-sm"><span class="text-[#aeecff]">Balance:</span>&nbsp;0</p>
             </div>
-            <div class="relative flex w-full h-12 items-center justify-between rounded-lg border border-white/5 bg-white/10 px-2 ">
-                <input type="text" placeholder="0.00" class="w-full bg-transparent focus:outline-none border-none focus:ring-0" name="stakeInput" on:input={handleInput}/>
+            <div class="relative flex w-full h-12 items-center justify-between rounded-lg border border-white/5 bg-white/5 px-2 ">
+                <input type="text" placeholder="0.00" class="w-full bg-transparent focus:outline-none border-none focus:ring-0" name="stakeUSDC" on:input={handleInput}/>
 
-                <button class="flex flex-row w-auto items-center justify-center gap-x-2 bg-white/10 rounded-lg px-4 py-1">
+                <div class="flex flex-row gap-x-2">
+                    <button on:click={() => console.log("Max 1")} class="font-semibold text-[#7eb7cd]">Max</button>
+                    <div class="flex flex-row w-auto items-center justify-center gap-x-2 bg-white/5 rounded-lg px-4 py-1">
+                        <img src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fusdc-icon.png&w=48&q=75" alt="img" class="w-[20px] h-auto">
+                        <p>USDC</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {#if supplyBtn === "USDC + BUCK"}
+            <!--BUCK-->
+            <div class="flex flex-col w-full gap-y-1">
+                <div class="flex flex-row justify-between items-center">
+                    <p class="font-semibold text-lg">BUCK budget</p>
+                    <p class="text-sm"><span class="text-[#aeecff]">Balance:</span>&nbsp;0</p>
+                </div>
+                <div class="relative flex w-full h-12 items-center justify-between rounded-lg border border-white/5 bg-white/5 px-2 ">
+                    <input type="text" placeholder="0.00" class="w-full bg-transparent focus:outline-none border-none focus:ring-0" name="stakeUSDC_BUCK" on:input={handleInput}/>
+
+                    <div class="flex flex-row gap-x-2">
+                        <button on:click={() => console.log("Max 2")} class="font-semibold text-[#7eb7cd]">Max</button>
+                        <div class="flex flex-row w-auto items-center justify-center gap-x-2 bg-white/5 rounded-lg px-4 py-1">
+                            <img src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fbuck-icon.png&w=48&q=75" alt="img" class="w-[20px] h-auto">
+                            <p>BUCK</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {/if}
+
+        <div class="flex items-center justify-center">
+            <Button mode="blue">
+                <p class="text-lg">Connect Wallet</p>
+            </Button>
+        </div>
+
+        <div class="border border-white/5 px-4 py-6 rounded-lg space-y-2">
+            <p class="font-medium text-lg text-[#6c939f]">Liquidity added</p>
+            <div class="flex items-center justify-between">
+                <p class="text-sm font-medium text-[#6c939f]">Total Value</p>
+                <p class="text-sm font-medium text-white/50">~$ 0 USDC-BUCK</p>
+            </div>
+            <div class="border border-[#6c939f] mt-2"></div>
+            <div class="flex items-center justify-between">
+                <p class="text-lg font-medium text-[#aeecff] flex items-center gap-x-1">
+                    Estimated APR
+                    <Icon icon="ep:question-filled" class="text-[#aeecff] w-4 h-4"/>
+                </p>
+                <p class="text-lg font-medium">71.76%</p>
+            </div>
+
+        </div>
+
+    </div>
+</Modal>
+
+<Modal bind:this={stakeModal2} type="dark" desktopWidth="max-w-[452px]">
+    <div class="px-4 flex flex-col gap-y-6 mb-6">
+        <p class="font-bold text-2xl md:text-3xl">Provide Liquidity</p>
+
+        <div class="flex flex-col gap-y-2">
+            <p class="font-semibold text-lg">Choose method to supply</p>
+            <div class="flex flex-row flex-wrap gap-4">
+                <button class="flex flex-row items-center gap-x-2 px-2 py-1 rounded-md bg-white/25">
                     <img src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fusdc-icon.png&w=48&q=75" alt="img" class="w-[20px] h-auto">
-                    <p>USDC</p>
+                    <p class="text-md ">USDC</p>
                 </button>
+            </div>
+        </div>
+
+        <!--USDC-->
+        <div class="flex flex-col w-full gap-y-1">
+            <div class="flex flex-row justify-between items-center">
+                <p class="font-semibold text-lg">USDC budget</p>
+                <p class="text-sm"><span class="text-[#aeecff]">Balance:</span>&nbsp;0</p>
+            </div>
+            <div class="relative flex w-full h-12 items-center justify-between rounded-lg border border-white/5 bg-white/5 px-2 ">
+                <input type="text" placeholder="0.00" class="w-full bg-transparent focus:outline-none border-none focus:ring-0" name="stakeUSDC" on:input={handleInput}/>
+
+                <div class="flex flex-row gap-x-2">
+                    <button on:click={() => console.log("Max 3")} class="font-semibold text-[#7eb7cd]">Max</button>
+                    <div class="flex flex-row w-auto items-center justify-center gap-x-2 bg-white/5 rounded-lg px-4 py-1">
+                        <img src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fusdc-icon.png&w=48&q=75" alt="img" class="w-[20px] h-auto">
+                        <p>USDC</p>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -165,7 +314,7 @@
             <p class="font-medium text-lg text-[#6c939f]">Liquidity added</p>
             <div class="flex items-center justify-between">
                 <p class="text-sm font-medium text-[#6c939f]">Total Value</p>
-                <p class="text-sm font-medium">~$ 0 USDC-BUCK</p>
+                <p class="text-sm font-medium text-white/50">~$ 0 USDC-BUCK</p>
             </div>
             <div class="border border-[#6c939f] mt-2"></div>
             <div class="flex items-center justify-between">
