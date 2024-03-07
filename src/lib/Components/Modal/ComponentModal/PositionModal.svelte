@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Button from '$lib/Components/Button/Button.svelte';
+	import HoverPopup from '$lib/Components/Popups/HoverPopup.svelte';
     import Icon from "@iconify/svelte";
 	import { fade, slide } from 'svelte/transition';
     
@@ -63,7 +64,14 @@
                         alt=""
                     />
                 </div>
-                <div class=" font-bold text-center w-full" >{headSelect}</div>
+                <div class="flex justify-end items-center font-bold text-center w-full" >
+                    <div>
+                        {headSelect}
+                    </div>    
+                    <div>
+                        <Icon icon="iconamoon:arrow-left-2" class="w-6 h-6" rotate={3} />
+                    </div>
+                </div>
                 {#if showTank}
                     <div class="absolute z-9999 top-[100%] right-0 flex flex-col h-[100px] overflow-y-scroll w-[140px] bg-[#213035] border border-gray-600 rounded-lg " in:slide out:slide>
                         {#each pool as tank}
@@ -95,9 +103,13 @@
             <p>Borrow $BUCK</p>
             <div class="flex gap-2">
                 <div>Auto safe borrow</div>
-                <div class="my-auto">
-                    <Icon icon="material-symbols:help-rounded" width="15" height="15"  style="color: #aeecff" />
-                </div>
+                <HoverPopup
+                content="Auto set collateral ratio as 120% for stable collateral or 180% for volatile assets."
+                >
+                    <div class="my-auto">
+                        <Icon icon="material-symbols:help-rounded" width="15" height="15"  style="color: #aeecff" />
+                    </div>
+                </HoverPopup>
             </div>
         </div>
         <div class="flex w-full gap-x-2 bg-[#aee]/10 backdrop-blur-sm rounded-lg p-1">
