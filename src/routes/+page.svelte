@@ -71,6 +71,18 @@
             stakedSuiApy: '3.38%' 
         },
     ];
+
+	let table = [
+        { name: 'BUCKETUS', value: '5,807,693 ($6M)', percentage: '56,33%', color: 'text-[#BF9CEE]'},
+        { name: 'CETABLE', value: '3,000,002 ($3M)', percentage: '29.09%', color: 'text-[#9CEEFF]'},
+        { name: 'USDC', value: '839,146 ($839K)', percentage: '8.14%', color: 'text-[#9CEEFF]'},
+		{ name: 'USDC', value: '839,146 ($839K)', percentage: '8.14%', color: 'text-[#BF9CEE]' },
+		{ name: 'USDC', value: '839,146 ($839K)', percentage: '8.14%', color: 'text-[#9CEEFF]' },
+		{ name: 'USDC', value: '839,146 ($839K)', percentage: '8.14%', color: 'text-[#E75555]' },
+		{ name: 'USDC', value: '839,146 ($839K)', percentage: '8.14%', color: 'text-[#BF9CEE]' },
+		{ name: 'USDC', value: '839,146 ($839K)', percentage: '8.14%', color: 'text-[#E75555]' },
+		{ name: 'USDC', value: '839,146 ($839K)', percentage: '8.14%', color: 'text-[#E75555]' },
+	];
 </script>
 
 <div class="h-auto w-full flex flex-col xl:max-w-[90rem] items-start mx-auto p-6 gap-y-6">
@@ -116,7 +128,7 @@
 							<Icon icon="ep:question-filled" class="text-white/50 w-5 h-5"/>
 						</HoverPopup>
 					</p>
-					<p class="text-xl lg:text-3xl font-semibold whitespace-nowrap text-[#b2d3f3]">$ 21,982,096</p>
+					<p class="text-md sm:text-xl lg:text-3xl font-semibold whitespace-nowrap text-[#b2d3f3]">$ 21,982,096</p>
 				</Section>
 
 
@@ -125,7 +137,7 @@
 						<p class="flex flex-row items-center gap-x-2 whitespace-nowrap">
 							<span class="text-xs lg:text-sm font-semibold text-white/50">BUCK Liquidity</span>
 						</p>
-						<p class="text-xl lg:text-3xl font-semibold whitespace-nowrap text-[#b2d3f3]">$ 19,132,228</p>
+						<p class="text-md sm:text-xl lg:text-3xl font-semibold whitespace-nowrap text-[#b2d3f3]">$ 19,132,228</p>
 					</Section>
 					<Section customClass="p-4 lg:p-8 flex flex-col items-center justify-center w-full">
 						<p class="flex flex-row items-center gap-x-2 whitespace-nowrap">
@@ -134,70 +146,33 @@
 								<Icon icon="ep:question-filled" class="text-white/50 w-5 h-5"/>
 							</HoverPopup>
 						</p>
-						<p class="text-xl lg:text-3xl font-semibold whitespace-nowrap text-[#b2d3f3]">$ 9,824,529</p>
+						<p class="text-md sm:text-xl lg:text-3xl font-semibold whitespace-nowrap text-[#b2d3f3]">$ 9,824,529</p>
 					</Section>
 				</div>
 			</div>
 
-			<Section customClass="!p-8 w-full md:w-[50%] h-[267px] flex flex-col gap-4">
-				<!-- testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttestteststtet<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br> -->
+			<Section customClass="!px-8 !py-4 w-full md:w-[50%] h-[267px] flex flex-col gap-4">
 				<div class="flex flex-row gap-x-4 w-full items-center justify-center">
 					<div class="flex flex-col items-center">
 						<span class="text-xs lg:text-sm font-semibold text-white/50">Collateral</span>
-						<p class="text-xl lg:text-3xl font-semibold whitespace-nowrap text-[#b2d3f3]">$ 10,302,768</p>
+						<p class="text-md sm:text-xl lg:text-3xl font-semibold whitespace-nowrap text-[#b2d3f3]">$ 10,302,768</p>
 					</div>
 					<div class="flex flex-col items-center">
 						<span class="text-xs lg:text-sm font-semibold text-white/50">Bucket TCR</span>
-						<p class="text-xl lg:text-3xl font-semibold whitespace-nowrap text-[#b2d3f3]">164%</p>
+						<p class="text-md sm:text-xl lg:text-3xl font-semibold whitespace-nowrap text-[#b2d3f3]">164%</p>
 					</div>
 				</div>
 
-				<div class="flex flex-col px-2 overflow-auto">
-					<div class="flex flex-row justify-between">
-						<p class="text-sm">BUCKETUS</p>
-						<p class="text-sm">5,807,693 ($6M)</p>
-						<p class="text-sm">56,33%</p>
-					</div>
-					<div class="flex flex-row justify-between">
-						<p class="text-sm">BUCKETUS</p>
-						<p class="text-sm">5,807,693 ($6M)</p>
-						<p class="text-sm">56,33%</p>
-					</div>
-					<div class="flex flex-row justify-between">
-						<p class="text-sm">BUCKETUS</p>
-						<p class="text-sm">5,807,693 ($6M)</p>
-						<p class="text-sm">56,33%</p>
-					</div>
-					<div class="flex flex-row justify-between">
-						<p class="text-sm">BUCKETUS</p>
-						<p class="text-sm">5,807,693 ($6M)</p>
-						<p class="text-sm">56,33%</p>
-					</div>
-					<div class="flex flex-row justify-between">
-						<p class="text-sm">BUCKETUS</p>
-						<p class="text-sm">5,807,693 ($6M)</p>
-						<p class="text-sm">56,33%</p>
-					</div>
-					<div class="flex flex-row justify-between">
-						<p class="text-sm">BUCKETUS</p>
-						<p class="text-sm">5,807,693 ($6M)</p>
-						<p class="text-sm">56,33%</p>
-					</div>
-					<div class="flex flex-row justify-between">
-						<p class="text-sm">BUCKETUS</p>
-						<p class="text-sm">5,807,693 ($6M)</p>
-						<p class="text-sm">56,33%</p>
-					</div>
-					<div class="flex flex-row justify-between">
-						<p class="text-sm">BUCKETUS</p>
-						<p class="text-sm">5,807,693 ($6M)</p>
-						<p class="text-sm">56,33%</p>
-					</div>
-
-
-
-
+				<div class="grid grid-cols-3 px-2 overflow-auto max-w-[350px] mx-auto">
+					{#each table as row}
+						<div class="text-sm">{row.name}</div>
+						<div class="text-sm text-right text-white/50 whitespace-nowrap">{row.value}</div>
+						<div class="text-sm text-right {row.color}">{row.percentage}</div> 
+					{/each}
 				</div>
+
+
+				
 			</Section>
 		</div>
 	</div>
