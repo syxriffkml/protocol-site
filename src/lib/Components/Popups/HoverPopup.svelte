@@ -28,11 +28,11 @@
 
   {#if isVisible}
     <div class="fixed z-10" >
-      <div class="border border-gray-700 w-[10rem] xl:w-[20rem] bg-[#141b1d] rounded-lg p-2 absolute top-0 left-1/2 transform -translate-x-1/2" in:fade out:fade>
-        <div class="text-sm font-semibold text-white">
+      <div class="border border-gray-700 w-[10rem] xl:w-auto bg-[#141b1d] rounded-lg p-2 absolute top-0 left-1/2 transform -translate-x-1/2" in:fade out:fade>
+        <div class="text-sm font-semibold text-white w-full">
           {header}
         </div>
-        <div class="text-xs text-slate-400 ">
+        <div class="text-xs text-slate-400 whitespace-nowrap">
           {content}
         </div>
       </div>
