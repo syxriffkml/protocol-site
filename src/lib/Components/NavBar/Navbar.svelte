@@ -20,7 +20,10 @@
     <!--End of Desktop View-->
 
     <!--Mobile View-->
-    <button class="flex xl:hidden items-center justify-center p-2 hover:bg-black/25 rounded-lg">
+    <button class="flex xl:hidden items-center justify-center p-2 hover:bg-black/25 rounded-lg" on:click={(()=>{
+        console.log('open drawer');
+        
+    })}>
         <Icon icon="solar:hamburger-menu-linear" class="w-8 h-8"/>
     </button>
 

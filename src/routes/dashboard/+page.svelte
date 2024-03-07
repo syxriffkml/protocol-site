@@ -45,8 +45,8 @@
                         <p class="text-sm font-semibold text-[#aeecff]">
                             Fountain Reward 
                         </p>
-                        <HoverPopup header="Fountain Reward" content="Your reward from Fountain">
-                            <div class="my-auto">
+                        <HoverPopup header="Fountain Reward" content="Your reward from Fountain ">
+                            <div class="my-auto"> 
                                 <Icon icon="material-symbols:help-rounded" width="15" height="15"  style="color: #aeecff" />
                             </div>
                         </HoverPopup>

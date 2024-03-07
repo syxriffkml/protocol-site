@@ -26,7 +26,7 @@
                     <div>
                         Your Debt 
                     </div>
-                    <HoverPopup header="Your Debt" content="How much user should repay to get back all collateral" topPosition={-80}>
+                    <HoverPopup header="Your Debt" content="How much user should repay to get back all collateral" >
                         <div class="my-auto ">
                             <Icon icon="material-symbols:help-rounded" width="15" height="15" />
                         </div>
