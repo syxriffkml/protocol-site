@@ -29,7 +29,7 @@
 </script>
 
 <!-- prettier-ignore -->
-<div use:setCurrentPage class="hidden xl:flex flex-col justify-between bg-black h-full w-full p-6">
+<div use:setCurrentPage class="hidden xl:flex flex-col justify-between bg-black/45 h-full w-full p-6">
     <div class="flex items-center justify-center w-full mb-12">
         <img src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fbucket-text-logo.png&w=256&q=75" alt="img" class="w-[140px] h-auto">
     </div>
