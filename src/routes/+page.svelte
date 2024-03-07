@@ -180,9 +180,6 @@
 						<div class="text-sm text-right {row.color}">{row.percentage}</div> 
 					{/each}
 				</div>
-
-
-				
 			</Section>
 		</div>
 	</div>
