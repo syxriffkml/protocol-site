@@ -108,6 +108,6 @@
 
     .banner::before {
         content: "";
-        @apply absolute inset-px bg-[#232f33] rounded-lg z-[-1];
+        @apply absolute inset-px bg-[#141b1d] rounded-lg z-[-1];
     }
 </style>
