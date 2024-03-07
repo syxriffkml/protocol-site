@@ -4,6 +4,7 @@
 	import CardImg from "$lib/Components/Box/BoxImage.svelte";
 	import SectionOverflow from "$lib/Components/Box/BoxOverFlow.svelte";
 	import Section from "$lib/Components/Box/Box.svelte";
+	import HoverPopup from '$lib/Components/Popups/HoverPopup.svelte';
 	
 	let buttons = [
         { 
@@ -107,7 +108,15 @@
 				<Section customClass="!p-8 flex flex-col items-center justify-center w-full xl:w-[50%] order-2 xl:order-1">
 					<p class="flex flex-row items-center gap-x-2 whitespace-nowrap">
 						<span class="text-xs lg:text-sm font-semibold text-white/50">Total value locked</span>
-						<Icon icon="ep:question-filled" class="text-white/50 w-5 h-5"/>
+						
+						<HoverPopup 
+							header="Total value locked" 
+							content="Total value locked in Bucket. Including collateral value,
+								BUCK in tank pools, LP tokens locked in Bucket 
+								fountain and PSM tokens." 
+						>
+							<Icon icon="ep:question-filled" class="text-white/50 w-5 h-5"/>
+						</HoverPopup>
 					</p>
 					<p class="text-xl lg:text-3xl font-semibold whitespace-nowrap">$ 21,982,096</p>
 				</Section>
@@ -117,14 +126,15 @@
 					<Section customClass="p-4 lg:p-8 flex flex-col items-center justify-center w-full">
 						<p class="flex flex-row items-center gap-x-2 whitespace-nowrap">
 							<span class="text-xs lg:text-sm font-semibold text-white/50">BUCK Liquidity</span>
-							<Icon icon="ep:question-filled" class="text-white/50 w-5 h-5"/>
 						</p>
 						<p class="text-xl lg:text-3xl font-semibold whitespace-nowrap">$ 19,132,228</p>
 					</Section>
 					<Section customClass="p-4 lg:p-8 flex flex-col items-center justify-center w-full">
 						<p class="flex flex-row items-center gap-x-2 whitespace-nowrap">
 							<span class="text-xs lg:text-sm font-semibold text-white/50">Circulation BUCK</span>
-							<Icon icon="ep:question-filled" class="text-white/50 w-5 h-5"/>
+							<HoverPopup header="Circulation BUCK" content="Total BUCK in circulation">
+								<Icon icon="ep:question-filled" class="text-white/50 w-5 h-5"/>
+							</HoverPopup>
 						</p>
 						<p class="text-xl lg:text-3xl font-semibold whitespace-nowrap">$ 9,824,529</p>
 					</Section>
