@@ -4,6 +4,7 @@
 	import Section from "$lib/Components/Box/Box.svelte";
     import Modal from "$lib/Components/Modal/Index/Modal.svelte";
     import { fade } from 'svelte/transition';
+	import HoverPopup from "$lib/Components/Popups/HoverPopup.svelte";
 
 
     //Modal declaration
@@ -63,14 +64,18 @@
                             <div class="flex flex-col gap-y-2">
                                 <p class="text-[#aeecff] font-medium flex flex-row items-center gap-x-2">
                                     TVL
-                                    <Icon icon="ep:question-filled" class="w-4 h-4"/>
+                                    <HoverPopup header="TVL" content="This is TVL in DEX, different from fountain" >
+                                        <Icon icon="ep:question-filled" class="w-4 h-4"/>
+                                    </HoverPopup>
                                 </p>
                                 <p class="text-xl xl:text-2xl font-medium">$ 5,748,252</p>
                             </div>
                             <div class="flex flex-col gap-y-2">
                                 <p class="text-[#aeecff] font-medium flex flex-row items-center gap-x-2">
                                     APR
-                                    <Icon icon="ep:question-filled" class="w-4 h-4"/>
+                                    <HoverPopup header="APR" content="Swap fee apr is 0.50%. Bonus 53338 SUI emission this week." >
+                                        <Icon icon="ep:question-filled" class="w-4 h-4"/>
+                                    </HoverPopup>
                                 </p>
                                 <p class="text-xl xl:text-2xl font-medium">73.59 %</p>
                             </div>
@@ -108,14 +113,18 @@
                             <div class="flex flex-col gap-y-2">
                                 <p class="text-[#aeecff] font-medium flex flex-row items-center gap-x-2">
                                     TVL
-                                    <Icon icon="ep:question-filled" class="w-4 h-4"/>
+                                    <HoverPopup header="TVL" content="This is TVL in DEX, different from fountain" >
+                                        <Icon icon="ep:question-filled" class="w-4 h-4"/>
+                                    </HoverPopup>
                                 </p>
                                 <p class="text-xl xl:text-2xl font-medium">$ 9,652,448</p>
                             </div>
                             <div class="flex flex-col gap-y-2">
                                 <p class="text-[#aeecff] font-medium flex flex-row items-center gap-x-2">
                                     APR
-                                    <Icon icon="ep:question-filled" class="w-4 h-4"/>
+                                    <HoverPopup header="APR" content="Bonus 53338 SUI emission this week." >
+                                        <Icon icon="ep:question-filled" class="w-4 h-4"/>
+                                    </HoverPopup>
                                 </p>
                                 <p class="text-xl xl:text-2xl font-medium">72.97 %</p>
                             </div>
@@ -153,14 +162,18 @@
                             <div class="flex flex-col gap-y-2">
                                 <p class="text-[#aeecff] font-medium flex flex-row items-center gap-x-2">
                                     TVL
-                                    <Icon icon="ep:question-filled" class="w-4 h-4"/>
+                                    <HoverPopup header="TVL" content="This is TVL in DEX, different from fountain" >
+                                        <Icon icon="ep:question-filled" class="w-4 h-4"/>
+                                    </HoverPopup>
                                 </p>
                                 <p class="text-xl xl:text-2xl font-medium">$ 9,652,448</p>
                             </div>
                             <div class="flex flex-col gap-y-2">
                                 <p class="text-[#aeecff] font-medium flex flex-row items-center gap-x-2">
                                     APR
-                                    <Icon icon="ep:question-filled" class="w-4 h-4"/>
+                                    <!-- <HoverPopup header="APR" content="Bonus 53338 SUI emission this week." >
+                                        <Icon icon="ep:question-filled" class="w-4 h-4"/>
+                                    </HoverPopup> -->
                                 </p>
                                 <p class="text-xl xl:text-2xl font-medium">72.97 %</p>
                             </div>
