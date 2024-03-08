@@ -92,7 +92,7 @@
 			<CardImg customClass="">
 				<div class="flex flex-col w-full h-full gap-y-8">
 					<p class="text-3xl font-semibold">Earn up to 67.37%<br>APR of $SUI</p>
-					<Button width="w-[200px]" mode="blue" customClass="flex items-center justify-center gap-x-2 hover:gap-x-6 !transition-all !duration-200">
+					<Button width="w-[200px]" mode="blue" customClass="flex items-center justify-center gap-x-2 hover:gap-x-6 text-xl hover:text-[24px] !transition-all !duration-900">
 						<p class="text-xl">Explore</p>
 						<div class="bg-black rounded-full w-auto p-1">
 							<Icon icon="mingcute:arrow-right-line" class="w-5 h-5 text-white"/>
@@ -104,7 +104,7 @@
 			<CardImg customClass="hidden md:block">
 				<div class="flex flex-col w-full h-full gap-y-8">
 					<p class="text-3xl font-semibold">Use BUCK<br>in Suilette!</p>
-					<Button width="w-[200px]" mode="blue" customClass="flex items-center justify-center gap-x-2 hover:gap-x-6 !transition-all !duration-200">
+					<Button width="w-[200px]" mode="blue" customClass="flex items-center justify-center gap-x-2 hover:gap-x-6 text-xl hover:text-[24px] !transition-all !duration-900">
 						<p class="text-xl">Try Out</p>
 						<div class="bg-black rounded-full w-auto p-1">
 							<Icon icon="mingcute:arrow-right-line" class="w-5 h-5 text-white"/>
@@ -120,7 +120,6 @@
 				<Section customClass="!p-8 flex flex-col items-center justify-center w-full xl:w-[50%] order-2 xl:order-1">
 					<p class="flex flex-row items-center gap-x-2 whitespace-nowrap">
 						<span class="text-xs lg:text-sm font-semibold text-white/50">Total value locked</span>
-						
 						<HoverPopup 
 							header="Total value locked" 
 							content="Total value locked in Bucket. Including collateral value, BUCK in tank pools, LP tokens locked in Bucket fountain and PSM tokens." 
@@ -197,10 +196,14 @@
 						</div>
 			
 						<div>
-							<p class="text-[#aeecff] text-sm font-semibold flex items-center gap-x-1">
+							<div class="text-[#aeecff] text-sm font-semibold flex items-center gap-x-1">
 								Minted BUCK
-								<Icon icon="ep:question-filled" class="text-white/50 w-4 h-4"/>
-							</p>
+								<HoverPopup content="Mint Cap is 1.5M">
+									<div class="my-auto">
+										<Icon icon="ep:question-filled" class="text-white/50 w-4 h-4"/>
+									</div>
+								</HoverPopup>
+							</div>
 							<p class="text-2xl">{button.mintedBuck}</p>
 						</div>
 			
