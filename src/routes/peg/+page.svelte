@@ -106,7 +106,7 @@
              <div>
                 <div class="space-y-2 md:flex md:space-y-0 md:gap-4 gap-y-4 justify-between">
                     <div class="flex w-full bg-[#aee]/10 backdrop-blur-sm rounded-lg p-1">
-                        <input bind:value={inputPrimary} class="w-full bg-transparent  rounded-l-lg !border-none" placeholder="0.00"/>
+                        <input bind:value={inputPrimary} class="w-full bg-transparent focus:ring-0 rounded-l-lg !border-none" placeholder="0.00"/>
                         <ComboBox {headSelect} {imgSelect} bind:showCombo={showDiv}>
                             <div class="z-[9999]">
                                 {#each pool as tank}
@@ -135,7 +135,7 @@
                         </button>
                     </div>
                     <div class="flex w-full bg-[#aee]/10  rounded-lg p-1 {showDiv? 'z-[-5]': 'z-[0]'}">
-                        <input bind:value={inputSecondary} class="w-full bg-transparent  rounded-l-lg !border-none" placeholder="0.00"/>
+                        <input bind:value={inputSecondary} class="w-full bg-transparent focus:ring-0 rounded-l-lg !border-none" placeholder="0.00"/>
                         <button class="px-4 text-slate-500 font-bold text-lg">
                             MAX
                         </button>
@@ -217,7 +217,7 @@
                         </div>
                     </div>
                     <div class="flex w-full bg-[#aee]/10 backdrop-blur-sm rounded-lg p-1">
-                        <input bind:value={inputPrimary} class="w-full bg-transparent  rounded-l-lg !border-none" placeholder="0.00"/>
+                        <input bind:value={inputPrimary} class="w-full bg-transparent focus:ring-0 rounded-l-lg !border-none" placeholder="0.00"/>
                         <div class="flex justify-center items-center gap-2 bg-[#232f33] rounded-md px-2">
                             <div class="w-9 h-9 flex justify-center items-center">
                                 <img src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fbuck-icon.png&w=32&q=75" alt="">
