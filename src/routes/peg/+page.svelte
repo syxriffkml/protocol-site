@@ -105,7 +105,8 @@
         {#if tabActive === 'PSM'}
              <div>
                 <div class="space-y-2 md:flex md:space-y-0 md:gap-4 gap-y-4 justify-between">
-                    <div class="flex w-full bg-[#aee]/10 backdrop-blur-sm rounded-lg p-1">
+                    <!-- input 1 -->
+                    <div class="flex w-full bg-[#aee]/10 backdrop-blur-sm rounded-lg p-1 {swap?'order-3':'order-1'}">
                         <input bind:value={inputPrimary} class="w-full bg-transparent focus:ring-0 rounded-l-lg !border-none" placeholder="0.00"/>
                         <ComboBox {headSelect} {imgSelect} bind:showCombo={showDiv}>
                             <div class="z-[9999]">
@@ -127,14 +128,18 @@
                             </div>
                         </ComboBox>   
                     </div>
-                    <div class="md:w-fit w-full flex justify-center items-center">
+
+                    <!-- button swap -->
+                    <div class="md:w-fit w-full flex justify-center items-center order-2">
                         <button class=" bg-gray-700 rounded-full h-fit my-auto text-[#aee]" on:click={(()=>{swap = !swap})}>
                             <div class="w-auto rounded-full p-1 flex items-center justify-center rotate-90 md:rotate-0">
                                 <Icon icon="flowbite:arrow-right-solid" class="w-6 h-6"/>
                             </div>
                         </button>
                     </div>
-                    <div class="flex w-full bg-[#aee]/10  rounded-lg p-1 {showDiv? 'z-[-5]': 'z-[0]'}">
+
+                    <!-- input 2 -->
+                    <div class="flex w-full bg-[#aee]/10  rounded-lg p-1 order-1 {swap?'order-1':'order-3'} {showDiv? 'z-[-5]': 'z-[0]'}">
                         <input bind:value={inputSecondary} class="w-full bg-transparent focus:ring-0 rounded-l-lg !border-none" placeholder="0.00"/>
                         <button class="px-4 text-slate-500 font-bold text-lg">
                             MAX
@@ -257,9 +262,9 @@
                 </Section>
             </div>
         {:else}
-        <div>
-            loading
-        </div>
+            <div>
+                loading<!-- Creating this div only for loading (or you can do another if) -->
+            </div>
         {/if}
     </Section>
 </div>
