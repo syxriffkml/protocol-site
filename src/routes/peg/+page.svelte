@@ -12,13 +12,13 @@
 
     let swap:boolean = false;
 
-    let headSelect: string = 'BUCK'
+    let headSelect: string = 'vSUI';
 
     let imgBUCK:string = 'https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fbuck-icon.png&w=32&q=75';
 
     let imgTANK:string = 'https://app.bucketprotocol.io/images/vsui-icon.svg';
     
-    let imgSelect: string = imgBUCK;
+    let imgSelect: string = imgTANK;
 
     let showDiv: boolean = false;
 
@@ -112,8 +112,8 @@
                                 {#each pool as tank}
                                     <button class="flex justify-start items-center gap-x-2 p-2" 
                                     on:click={(()=>{
-                                        headSelect = tank.header; 
-                                        imgSelect = imgTANK;                                         
+                                            headSelect = tank.header; 
+                                            imgSelect = imgTANK;                                         
                                         })}>
                                         <div class="w-4 h-4 my-auto">
                                             <img src={tank.img} alt="">
@@ -168,9 +168,9 @@
                                 
                                 <div>
                                     {#if info.title === 'Rate'}
-                                        1 BUCK = {info.dataRate} USDC
+                                        1 BUCK = {info.dataRate} {headSelect}
                                     {:else if info.title === 'Balance'}
-                                        {(info.data).toFixed(2)} USDC
+                                        {(info.data).toFixed(2)} {headSelect}
                                     {:else if info.title === 'Mint fee'}
                                         {(info.data).toFixed(2)} %
                                     {:else if info.title === 'Switch fee' && swap }
