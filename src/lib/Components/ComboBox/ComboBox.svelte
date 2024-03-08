@@ -8,11 +8,20 @@
 
     export let headSelect:string= '';
 
+    export function handleOutsideClick(event: any) {
+        if (showCombo) {
+            if (event.target === event.currentTarget) {
+                showCombo = false;
+            }
+        }
+	}
+
 </script>
 
 <button
 	class=" flex justify-center items-center gap-2 bg-[#213035] rounded-md px-2"
-	on:click={() => {
+	on:click={(event) => {
+        handleOutsideClick;
 		showCombo = !showCombo;
 	}}
 >
@@ -27,6 +36,7 @@
 			<Icon icon="iconamoon:arrow-left-2" class="w-6 h-6" />
 		</div>
 	</div>
+
 	{#if showCombo}
 		<div
 			class="absolute z-9999 top-[100%] right-0 flex flex-col h-[100px] overflow-y-scroll w-[140px] bg-[#213035] border border-gray-600 rounded-lg"
@@ -36,4 +46,5 @@
             <slot/>
 		</div>
 	{/if}
+
 </button>
