@@ -66,7 +66,7 @@
         {/if}
     </div>
 
-    <div class="flex flex-col {inDrawer ? 'items-center' : ''} gap-y-2">
+    <div class="flex flex-col {inDrawer ? 'items-center' : ''} gap-y-2 pb-8">
         <p class="text-[#aeecff] text-sm">Audited By</p>
         <div class="flex flex-row gap-x-2">
             <img src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fottersec-logo.png&w=128&q=75" alt="img" class="w-[90px] h-auto">
