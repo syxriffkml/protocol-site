@@ -30,9 +30,9 @@
 
 <!-- prettier-ignore -->
 <div use:setCurrentPage class="hidden xl:flex flex-col justify-between bg-black/45 h-full w-full p-6">
-    <div class="flex items-center justify-center w-full mb-12">
+    <button class="flex items-center justify-center w-full mb-12" on:click={(()=>{ window.location.href = '/' })}>
         <img src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fbucket-text-logo.png&w=256&q=75" alt="img" class="w-[140px] h-auto">
-    </div>
+    </button>
 
     <div class="w-full flex-grow space-y-3">
         {#each tabs as tab (tab.href)}

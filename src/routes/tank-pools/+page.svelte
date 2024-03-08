@@ -64,7 +64,7 @@
 			</div>
 		</div>
 
-		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6 mt-10 w-full">
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6 mt-10 w-full mb-10">
 			<div class="flex col-span-1 xl:col-span-2">
 				<div class="hidden xl:block min-w-[54px]" />
 				<SectionImage height={'h-full'} margin={'mt-0'}>

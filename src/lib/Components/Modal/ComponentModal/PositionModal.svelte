@@ -101,13 +101,12 @@
     <div class="space-y-1 {showTank? 'z-[-1]': 'z-[0]'}"> 
         <div class="flex justify-between text-sm font-semibold">
             <p>Borrow $BUCK</p>
-            <div class="flex gap-2">
-                <div>Auto safe borrow</div>
+            <div class="flex gap-2 text-[#aeecff]">
+                <div class="text-[#aeecff]">Auto safe borrow</div>
                 <HoverPopup
-                content="Auto set collateral ratio as 120% for stable collateral or 180% for volatile assets."
-                >
-                    <div class="my-auto">
-                        <Icon icon="material-symbols:help-rounded" width="15" height="15"  style="color: #aeecff" />
+                content="Auto set collateral ratio as 120% for stable collateral or 180% for volatile assets.">
+                    <div class="mt-1">
+                        <Icon icon="material-symbols:help-rounded" />
                     </div>
                 </HoverPopup>
             </div>
@@ -126,30 +125,31 @@
         </div>
     </div>
     
+    <div class="mx-auto">
+        <Button customClass="w-[150px]" handler={(()=>{
+            console.log('Click Connect Button');
+        })}>Connect</Button>
+    </div>
 
-	<Button handler={(()=>{
-        console.log('Click Connect Button');
-        
-    })}>Connect</Button>
-	<div class="border border-gray-500 rounded-lg p-4 space-y-2">
+	<div class="border border-gray-500/20 rounded-lg p-4 space-y-3">
         {#each contentPosition as positiondetails}
-        <div class="flex justify-between font-semibold text-sm md:text-md">
-            <div class="text-[#aeecff]">
-                {positiondetails.title}
+            <div class="flex justify-between font-semibold text-xs md:text-[13px]">
+                <div class="text-[#aeecff]">
+                    {positiondetails.title}
+                </div>
+                <div>
+                    {#if positiondetails.title === 'Borrow fee'}
+                    {positiondetails.data + "% (~" + positiondetails.dataRate?.toFixed(4) + " BUCK)"}
+                    {:else if  positiondetails.title === 'Borrow fee' || positiondetails.title === 'Your Collateral Ratio' || positiondetails.title === 'Min Collateral ratio' || positiondetails.title === 'Recovery mode threshold'}
+                        {positiondetails.data.toFixed(2)}%
+                    {:else if  positiondetails.title === 'Liquidation price' }
+                        $ {positiondetails.data.toFixed(2)}
+                    {:else}
+                        {positiondetails.data.toFixed(2)}
+                    {/if}
+                    
+                </div>
             </div>
-            <div>
-                {#if positiondetails.title === 'Borrow fee'}
-                {positiondetails.data + "% (~" + positiondetails.dataRate?.toFixed(4) + " BUCK)"}
-                {:else if  positiondetails.title === 'Borrow fee' || positiondetails.title === 'Your Collateral Ratio' || positiondetails.title === 'Min Collateral ratio' || positiondetails.title === 'Recovery mode threshold'}
-                     {positiondetails.data.toFixed(2)}%
-                {:else if  positiondetails.title === 'Liquidation price' }
-                     $ {positiondetails.data.toFixed(2)}
-                {:else}
-                    {positiondetails.data.toFixed(2)}
-                {/if}
-                
-            </div>
-        </div>
         {/each}
        
     </div>
