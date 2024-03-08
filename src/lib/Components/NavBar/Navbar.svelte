@@ -54,7 +54,7 @@
 
 <Drawer>
     <SideBar inDrawer={true}>
-        <button slot="closeButton" class="absolute left-[1.5rem]" on:click={hideDrawer}>
+        <button slot="closeButton" on:click={hideDrawer}>
             <Icon icon="ic:round-close" class="w-8 h-8"/>
         </button>
         <div slot="navbar-items" class="my-20">

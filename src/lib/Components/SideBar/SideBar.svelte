@@ -36,7 +36,9 @@
         {#if inDrawer}
             <slot name="closeButton"></slot>
         {/if}
-        <img src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fbucket-text-logo.png&w=256&q=75" alt="img" class="w-[140px] h-auto">
+        <div class="flex-grow flex justify-center">
+            <img src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fbucket-text-logo.png&w=256&q=75" alt="img" class="w-[140px] h-auto">
+        </div>    
     </div>
     
     <div class="w-full flex-grow space-y-3">
