@@ -26,14 +26,19 @@
         currentPage = window.location.pathname;
     }
 
+    export let inDrawer = false; // If the sidebar is in a drawer
 </script>
 
 <!-- prettier-ignore -->
-<div use:setCurrentPage class="hidden xl:flex flex-col justify-between bg-black/45 h-full w-full p-6">
+<div use:setCurrentPage class="flex flex-col justify-between bg-black/45 h-full w-full p-6 z-[500]">
+
     <div class="flex items-center justify-center w-full mb-12">
+        {#if inDrawer}
+            <slot name="closeButton"></slot>
+        {/if}
         <img src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fbucket-text-logo.png&w=256&q=75" alt="img" class="w-[140px] h-auto">
     </div>
-
+    
     <div class="w-full flex-grow space-y-3">
         {#each tabs as tab (tab.href)}
             <Button width="w-full" mode="side" rounded="rounded-lg" customClass="h-14" handler={(()=>{ handleClickTab(tab); })}>
@@ -51,9 +56,15 @@
                 </div>
             </Button>
         {/each}
+
+        {#if inDrawer}
+        <div class="my-20">
+            <slot name="navbar-items"></slot>
+        </div>
+        {/if}
     </div>
 
-    <div class="flex flex-col gap-y-2">
+    <div class="flex flex-col {inDrawer ? 'items-center' : ''} gap-y-2">
         <p class="text-[#aeecff] text-sm">Audited By</p>
         <div class="flex flex-row gap-x-2">
             <img src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fottersec-logo.png&w=128&q=75" alt="img" class="w-[90px] h-auto">
