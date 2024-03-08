@@ -63,22 +63,28 @@
         {/each}
         <Button width="w-full" mode="side" rounded="rounded-lg" customClass="h-14" handler={(()=>{ showButtons = !showButtons })}>
             <div class="flex items-center justify-start gap-x-4">
-                <Icon icon="mingcute:bridge-fill" class="w-7 h-7 text-[#aeecff]"/>
+                {#if currentPage === '/transfer-from-cex' || currentPage === '/wormhole'}
+                    <div class="rounded-full bg-[#aeecff] p-1">
+                        <Icon icon="mingcute:bridge-fill" class="w-7 h-7 text-black"/>
+                    </div>
+                {:else}
+                    <div class="rounded-full bg-transparent p-1">
+                        <Icon icon="mingcute:bridge-fill" class="w-7 h-7 text-[#aeecff]"/>
+                    </div>
+                {/if}
                 <span class="text-lg font-normal">Bridges</span>
             </div>
         </Button>
 
         {#if showButtons}
         <div class="space-y-3 flex flex-col items-center pb-4" in:slide out:slide>
-            <Button width="w-[90%]" mode="side" rounded="rounded-lg" customClass="h-14" handler={(()=>{ goto('/transfer-from-cex') })}>
+            <Button width="w-[90%]" mode="side" rounded="rounded-lg" customClass="h-14" handler={(()=>{ window.location.href = '/transfer-from-cex'; })}>
                 <div class="flex items-center justify-start gap-x-4">
-                    <!-- <Icon icon="mingcute:bridge-fill" class="w-7 h-7 text-[#aeecff]"/> -->
                     <span class="text-lg font-normal">Transfer from CEX</span>
                 </div>
             </Button>
-            <Button width="w-[90%]" mode="side" rounded="rounded-lg" customClass="h-14" handler={(()=>{ goto('/wormhole') })}>
+            <Button width="w-[90%]" mode="side" rounded="rounded-lg" customClass="h-14" handler={(()=>{ window.location.href = '/wormhole'; })}>
                 <div class="flex items-center justify-start gap-x-4">
-                    <!-- <Icon icon="mingcute:bridge-fill" class="w-7 h-7 text-[#aeecff]"/> -->
                     <span class="text-lg font-normal">Wormhole</span>
                 </div>
             </Button>
