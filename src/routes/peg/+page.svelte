@@ -129,8 +129,8 @@
                     </div>
                     <div class="md:w-fit w-full flex justify-center items-center">
                         <button class=" bg-gray-700 rounded-full h-fit my-auto text-[#aee]" on:click={(()=>{swap = !swap})}>
-                            <div class="w-4 h-4 rotate-90 md:rotate-0">
-                                <Icon icon="flowbite:arrow-right-solid" />
+                            <div class="w-auto rounded-full p-1 flex items-center justify-center rotate-90 md:rotate-0">
+                                <Icon icon="flowbite:arrow-right-solid" class="w-6 h-6"/>
                             </div>
                         </button>
                     </div>
