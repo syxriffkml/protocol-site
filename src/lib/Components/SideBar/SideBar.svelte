@@ -1,5 +1,6 @@
 <!-- prettier-ignore -->
 <script lang="ts">
+	import { slide } from "svelte/transition";
     import Button from "../Button/Button.svelte";
     import Icon from '@iconify/svelte';
 
@@ -10,7 +11,7 @@
         {name: 'Tank Pools', icon: 'ion:water-outline', href: '/tank-pools'},
         {name: 'Fountain', icon: 'gg:arrow-up-o', href: '/fountain'},
         {name: 'Peg', icon: 'icon-park-outline:transfer-data', href: '/peg'},
-        {name: 'Bridges', icon: 'mingcute:bridge-fill', href: '/bridges'}
+        // {name: 'Bridges', icon: 'mingcute:bridge-fill', href: '/bridges'}
     ];
 
     /**
@@ -25,6 +26,7 @@
     function setCurrentPage(node: any) {
         currentPage = window.location.pathname;
     }
+    let showButtons = false;
 
     export let inDrawer = false; // If the sidebar is in a drawer
 </script>
@@ -58,6 +60,32 @@
                 </div>
             </Button>
         {/each}
+        <Button width="w-full" mode="side" rounded="rounded-lg" customClass="h-14" handler={(()=>{ showButtons = !showButtons })}>
+            <div class="flex items-center justify-start gap-x-4">
+                <Icon icon="mingcute:bridge-fill" class="w-7 h-7 text-[#aeecff]"/>
+                <span class="text-lg font-normal">Bridges</span>
+            </div>
+        </Button>
+
+        {#if showButtons}
+        <div class="space-y-3" in:slide out:slide>
+            <Button width="w-full" mode="side" rounded="rounded-lg" customClass="h-14" handler={(()=>{  })}>
+                <div class="flex items-center justify-start gap-x-4">
+                    <Icon icon="mingcute:bridge-fill" class="w-7 h-7 text-[#aeecff]"/>
+                    <span class="text-lg font-normal">1</span>
+                </div>
+            </Button>
+            <Button width="w-full" mode="side" rounded="rounded-lg" customClass="h-14" handler={(()=>{  })}>
+                <div class="flex items-center justify-start gap-x-4">
+                    <Icon icon="mingcute:bridge-fill" class="w-7 h-7 text-[#aeecff]"/>
+                    <span class="text-lg font-normal">2</span>
+                </div>
+            </Button>
+        </div>
+        {/if}
+
+
+
 
         {#if inDrawer}
         <div class="my-20">
@@ -66,7 +94,7 @@
         {/if}
     </div>
 
-    <div class="flex flex-col {inDrawer ? 'items-center' : ''} gap-y-2 pb-8">
+    <div class="flex flex-col {inDrawer ? 'items-center pb-8' : ''} gap-y-2">
         <p class="text-[#aeecff] text-sm">Audited By</p>
         <div class="flex flex-row gap-x-2">
             <img src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fottersec-logo.png&w=128&q=75" alt="img" class="w-[90px] h-auto">
