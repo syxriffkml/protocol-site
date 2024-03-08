@@ -9,7 +9,7 @@
 
 </script>
 
-<div class="h-[200vh] flex flex-col xl:max-w-[90rem] items-start mx-auto w-full p-6 gap-y-4">
+<div class="h-auto flex flex-col xl:max-w-[90rem] items-start mx-auto w-full p-6 gap-y-4">
     <div class=" w-full flex flex-col gap-[90px]">
         <div class="flex flex-wrap xl:flex-nowrap justify-between gap-y-4 gap-x-2 p-10">
             <div class="w-1/3 text-center">
