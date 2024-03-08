@@ -35,7 +35,7 @@
 	<div class="p-2 w-full">
 		<div class="flex flex-wrap xl:flex-nowrap justify-between gap-y-4 gap-x-2 p-10">
 			<div class="w-1/3 text-center">
-				<div class="flex justify-center items-center gap-2 text-sm text-slate-500 font-bold">
+				<div class="flex justify-center items-center gap-2 text-sm text-slate-500 font-bold whitespace-nowrap">
 					<div>
 						TANK POOL TVL
 					</div>
@@ -52,7 +52,7 @@
 				class="shrink-0 bg-border  h-28 w-[1px] bg-gradient-to-b from-[#86DDF8] to-[#86DDF800] xl:h-29.5"
 			/>
 			<div class="w-1/3 text-center">
-				<div class="text-sm text-slate-500 font-bold">Your BUCK in tank</div>
+				<div class="text-sm text-slate-500 font-bold whitespace-nowrap">Your BUCK in tank</div>
 				<div class="text-4xl font-semibold">$ 0</div>
 			</div>
 			<div
@@ -104,7 +104,7 @@
 			{#each pool as head}
 				<SectionOverflow header={head.header} animate={'floating'}>
 					<div class="w-[90%]">
-						<div class="text-[#aeecff] font-semibold text-sm ">total deposited</div>
+						<div class="text-[#aeecff] font-semibold text-sm ">Total deposited</div>
 						<div class="text-2xl">
 							{head.totalDepo} k
 						</div>
