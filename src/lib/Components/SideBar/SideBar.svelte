@@ -3,6 +3,7 @@
 	import { slide } from "svelte/transition";
     import Button from "../Button/Button.svelte";
     import Icon from '@iconify/svelte';
+	import { goto } from "$app/navigation";
 
     let tabs = [
         {name: 'Overview', icon: 'material-symbols:home-outline-rounded', href: '/'},
@@ -68,17 +69,17 @@
         </Button>
 
         {#if showButtons}
-        <div class="space-y-3" in:slide out:slide>
-            <Button width="w-full" mode="side" rounded="rounded-lg" customClass="h-14" handler={(()=>{  })}>
+        <div class="space-y-3 flex flex-col items-center pb-4" in:slide out:slide>
+            <Button width="w-[90%]" mode="side" rounded="rounded-lg" customClass="h-14" handler={(()=>{ goto('/transfer-from-cex') })}>
                 <div class="flex items-center justify-start gap-x-4">
-                    <Icon icon="mingcute:bridge-fill" class="w-7 h-7 text-[#aeecff]"/>
-                    <span class="text-lg font-normal">1</span>
+                    <!-- <Icon icon="mingcute:bridge-fill" class="w-7 h-7 text-[#aeecff]"/> -->
+                    <span class="text-lg font-normal">Transfer from CEX</span>
                 </div>
             </Button>
-            <Button width="w-full" mode="side" rounded="rounded-lg" customClass="h-14" handler={(()=>{  })}>
+            <Button width="w-[90%]" mode="side" rounded="rounded-lg" customClass="h-14" handler={(()=>{ goto('/wormhole') })}>
                 <div class="flex items-center justify-start gap-x-4">
-                    <Icon icon="mingcute:bridge-fill" class="w-7 h-7 text-[#aeecff]"/>
-                    <span class="text-lg font-normal">2</span>
+                    <!-- <Icon icon="mingcute:bridge-fill" class="w-7 h-7 text-[#aeecff]"/> -->
+                    <span class="text-lg font-normal">Wormhole</span>
                 </div>
             </Button>
         </div>
