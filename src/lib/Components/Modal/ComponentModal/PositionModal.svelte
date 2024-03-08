@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Button from '$lib/Components/Button/Button.svelte';
+	import ComboBox from '$lib/Components/ComboBox/ComboBox.svelte';
 	import HoverPopup from '$lib/Components/Popups/HoverPopup.svelte';
     import Icon from "@iconify/svelte";
 	import { fade, slide } from 'svelte/transition';
@@ -57,44 +58,25 @@
         </div>
         <div class="flex w-full gap-x-2 bg-[#aee]/10 backdrop-blur-sm rounded-lg p-1 relative">
             <input bind:value={inputBalance} class="w-full bg-transparent rounded-l-lg !border-none" placeholder="0.00"/>
-            <button class=" flex justify-center items-center gap-2 bg-[#213035] rounded-md px-2" on:click={(()=>{showTank = !showTank})}>
-                <div class="w-9 h-9 flex justify-center items-center">
-                    <img
-                        src={imgSelect}
-                        alt=""
-                    />
+            <ComboBox {headSelect} {imgSelect} bind:showCombo={showTank}>
+                <div class="z-[9999]">
+                    {#each pool as tank}
+                        <button class="flex justify-start items-center gap-x-2 p-2 z-20" 
+                        on:click={(()=>{
+                            headSelect = tank.header; 
+                            imgSelect = imgTANK; 
+                            })}>
+                            <div class="w-4 h-4 my-auto">
+                                <img src={tank.img} alt="">
+                            </div>
+                            <div>
+                                {tank.header}
+                            </div>
+    
+                        </button>
+                    {/each}
                 </div>
-                <div class="flex justify-end items-center font-bold text-center w-full" >
-                    <div>
-                        {headSelect}
-                    </div>    
-                    <div>
-                        <Icon icon="iconamoon:arrow-left-2" class="w-6 h-6" rotate={3} />
-                    </div>
-                </div>
-                {#if showTank}
-                    <div class="absolute z-9999 top-[100%] right-0 flex flex-col h-[100px] overflow-y-scroll w-[140px] bg-[#213035] border border-gray-600 rounded-lg " in:slide out:slide>
-                        {#each pool as tank}
-                                <button class="flex justify-start items-center gap-x-2 p-2 z-20" on:click={(()=>{
-                                    console.log(tank);
-                                    
-                                    headSelect = tank.header;
-                                    imgSelect = imgTANK;
-                                    
-                                })}>
-                                    <div class="w-4 h-4 my-auto">
-                                        <img src={tank.img} alt="">
-                                    </div>
-                                    <div>
-                                        {tank.header}
-                                    </div>
-            
-                                </button>
-                        {/each}
-                    </div>
-                {/if}
-                
-            </button>
+            </ComboBox>
         </div>
     </div>
     
