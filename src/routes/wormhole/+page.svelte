@@ -50,6 +50,12 @@
         selectAsset.closeModal();
     }
 
+    //Search bar function for asset selection
+    let searchAsset = '';
+    $: filteredAssets = assetSelection.filter(asset => 
+        asset.token.toLowerCase().includes(searchAsset.toLowerCase()) || 
+        asset.address.toLowerCase().includes(searchAsset.toLowerCase())
+    );
 
     //Start of From part////////////////////////////////////////////////////////////////
     let selectNetwork1: Modal
@@ -308,7 +314,7 @@
         </div>
 
         <div class="relative flex w-full h-12 items-center justify-between rounded-lg border border-white/5 bg-white/5 px-2 ">
-            <input type="text" placeholder="Search by name or contract address" class="w-full bg-transparent focus:outline-none border-none focus:ring-0" name="searchAsset"/>
+            <input type="text" placeholder="Search by name or contract address" class="w-full bg-transparent focus:outline-none border-none focus:ring-0" name="searchAsset" bind:value={searchAsset}/>
             <div class="flex flex-row gap-x-2">
                 <Icon icon="ic:round-search" class="w-6 h-6"/>
             </div>
@@ -335,7 +341,7 @@
 
         {#if tabActive === 'AVAILABLE TOKENS'}
             <div class="overflow-auto w-full h-[150px]">
-                {#each assetSelection.filter(asset => asset.available) as asset}
+                {#each filteredAssets.filter(asset => asset.available) as asset}
                     <button 
                         class="flex flex-row justify-between hover:bg-white/25 p-1 sm:p-2 transition-all duration-500 w-full text-left"
                         on:click={() => { functionSelectAsset(asset) }}
@@ -363,7 +369,7 @@
             </div>
         {:else if tabActive === 'ALL TOKENS'}
             <div class="overflow-auto w-full h-[150px]">
-                {#each assetSelection as asset}
+                {#each filteredAssets as asset}
                     <button 
                         class="flex flex-row justify-between hover:bg-white/25 p-1 sm:p-2 transition-all duration-500 w-full text-left"
                         on:click={() => { functionSelectAsset(asset) }}
