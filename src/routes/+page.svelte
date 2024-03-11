@@ -150,10 +150,10 @@
 				</div>
 			</div>
 
-			<Section customClass="!px-8 !py-4 w-full md:w-[50%] h-[267px] flex flex-col gap-4">
-				<div class="flex flex-row gap-x-4 w-full items-center justify-center">
+			<Section customClass="!px-8 !py-4 w-full md:w-[50%] h-[267px] flex flex-col xl:flex-row gap-4">
+				<div class="flex flex-row xl:flex-col  gap-y-4 xl:gap-x-4 w-auto items-center justify-center">
 					<div class="flex flex-col items-center">
-						<span class="text-xs lg:text-sm font-semibold text-white/50 flex flex-row items-center gap-x-2 whitespace-nowra">
+						<span class="text-xs lg:text-sm font-semibold text-white/50 flex flex-row items-center gap-x-2 whitespace-nowrap">
 							Collateral
 							<HoverPopup header="Collateral" content="The amount of collaterals in Bucket and PSM tokens">
 								<Icon icon="ep:question-filled" class="text-white/50 w-5 h-5"/>
@@ -162,7 +162,7 @@
 						<p class="text-md sm:text-xl lg:text-3xl font-semibold whitespace-nowrap text-[#b2d3f3]">$ 10,302,768</p>
 					</div>
 					<div class="flex flex-col items-center">
-						<span class="text-xs lg:text-sm font-semibold text-white/50 flex flex-row items-center gap-x-2 whitespace-nowra">
+						<span class="text-xs lg:text-sm font-semibold text-white/50 flex flex-row items-center gap-x-2 whitespace-nowrap">
 							Bucket TCR
 							<HoverPopup header="Collateral Ratio" content="Collateral ratio of all the assets in Bucket Protocol. Stablecoin CR are adjusted to 1.6x due to their stability.">
 								<Icon icon="ep:question-filled" class="text-white/50 w-5 h-5"/>
@@ -172,7 +172,7 @@
 					</div>
 				</div>
 
-				<div class="grid grid-cols-3 px-2 overflow-auto bucket-scrollbar max-w-[350px] mx-auto">
+				<div class="grid grid-cols-3 px-2 overflow-auto bucket-scrollbar max-w-[350px] xl:w-full mx-auto">
 					{#each table as row}
 						<div class="text-sm">{row.name}</div>
 						<div class="text-sm text-right text-white/50 whitespace-nowrap">{row.value}</div>
