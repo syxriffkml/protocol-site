@@ -44,11 +44,11 @@
     <!--End of Desktop View-->
 
     <!--Mobile View-->
-    <button class="flex xl:hidden items-center justify-center p-2 hover:bg-black/25 rounded-lg" on:click={(()=>{ drawerStore.open(drawerSettings); })}>
+    <button class="flex xl:hidden items-center justify-center p-2 hover:bg-black/25 rounded-lg z-[1]" on:click={(()=>{ drawerStore.open(drawerSettings); })}>
         <Icon icon="solar:hamburger-menu-linear" class="w-8 h-8"/>
     </button>
 
-    <p class="flex xl:hidden items-center justify-center w-full text-xl font-semibold">Protocol</p>
+    <p class="flex xl:hidden items-center justify-center w-full text-xl font-semibold -translate-x-6">Protocol</p>
     <!--End of Mobile View-->
 </div>
 
