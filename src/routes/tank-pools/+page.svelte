@@ -104,7 +104,7 @@
 			{#each pool as head}
 				<SectionOverflow header={head.header} animate={'floating'}>
 					<div class="w-[90%]">
-						<div class="text-[#aeecff] font-semibold text-sm ">Total deposited</div>
+						<div class="text-[#aeecff] font-semibold text-sm ">Total Deposited</div>
 						<div class="text-2xl">
 							{head.totalDepo} k
 						</div>

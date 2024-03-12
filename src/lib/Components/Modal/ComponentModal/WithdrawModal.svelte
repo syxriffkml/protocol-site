@@ -20,7 +20,7 @@
 
 
 </script>
-<div class="flex flex-col gap-y-6 p-2">
+<div class="flex flex-col gap-y-6 p-4">
     <div class="space-y-2">
         <div class="flex justify-between text-sm">
             <p>
@@ -37,7 +37,7 @@
     
         </div>
         <div class="flex w-full bg-[#aee]/10 backdrop-blur-sm rounded-lg gap-x-2 p-1">
-            <input bind:value={inputWithdraw} class="w-full bg-transparent  rounded-l-lg !border-transparent" placeholder="0.00"/>
+            <input bind:value={inputWithdraw} class="w-full bg-transparent  rounded-l-lg !border-transparent focus:ring-0" placeholder="0.00"/>
             <div class="flex justify-center items-center gap-2 bg-[#232f33] rounded-md px-2">
                 <div class="w-9 h-9 flex justify-center items-center">
                     <img src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fbuck-icon.png&w=32&q=75" alt="">

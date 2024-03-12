@@ -6,7 +6,7 @@
     $: inputDeposit = inputDeposit.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');
 
 </script>
-<div class="flex flex-col gap-y-6 p-2">
+<div class="flex flex-col gap-y-6 p-4">
     <div class="space-y-1">
         <div class="flex justify-between text-sm">
             <p>
@@ -23,7 +23,7 @@
     
         </div>
         <div class="flex w-full bg-[#aee]/10 backdrop-blur-sm rounded-lg p-1">
-            <input bind:value={inputDeposit} class="w-full bg-transparent  rounded-l-lg !border-none" placeholder="0.00"/>
+            <input bind:value={inputDeposit} class="w-full bg-transparent  rounded-l-lg !border-none focus:ring-0" placeholder="0.00"/>
             <button class="px-4 text-slate-500 font-bold">
                 MAX
             </button>
