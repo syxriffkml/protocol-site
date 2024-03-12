@@ -243,7 +243,7 @@
                     <div class="flex flex-col w-full text-sm font-semibold gap-y-2">
                         {#each infoRedeem as info}
                             <div class="flex justify-between">
-                                <div>
+                                <div class="text-[#aeecff]">
                                     {info.title}
                                 </div>
                                 

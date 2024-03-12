@@ -79,7 +79,7 @@
 							<Icon icon="mingcute:close-fill" class="w-5 h-5" />
 						</button>
 					</header>
-                    {:else if type === 'dark'}
+                {:else if type === 'dark'}
                     <header class="flex items-center justify-between px-4 pt-2 pb-0 mb-4">
 						<h2 class="text-xl md:text-2xl leading-7 font-titanOne text-stroke whitespace-nowrap">
 							{title}
