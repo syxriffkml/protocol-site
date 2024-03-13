@@ -61,15 +61,6 @@
             borrowInterestRate: '5.5%', 
             stakedSuiApy: '3.38%' 
         },
-		{ 
-            message: 'Button 7 clicked', 
-            collateralRatio: '185.24%', 
-            mintedBuck: '50.59k / 1.50m', 
-            mcr: '110%', 
-            mintFee: '0.50%', 
-            borrowInterestRate: '5.5%', 
-            stakedSuiApy: '3.38%' 
-        },
     ];
 
 	let table = [
@@ -92,7 +83,7 @@
 			<CardImg customClass="">
 				<div class="flex flex-col w-full h-full gap-y-8">
 					<p class="text-3xl font-semibold">Earn up to 67.37%<br>APR of $SUI</p>
-					<Button width="w-[200px]" mode="blue" customClass="flex items-center justify-center gap-x-2 hover:gap-x-6 text-xl hover:text-[24px] !transition-all !duration-700">
+					<Button width="w-[200px]" mode="blue" customClass="flex items-center justify-center gap-x-2 hover:gap-x-6 text-xl hover:text-[24px] !transition-all !duration-700" handler={()=>{ window.location.href='/fountain'; }}>
 						<p class="text-xl">Explore</p>
 						<div class="bg-black rounded-full w-auto p-1">
 							<Icon icon="mingcute:arrow-right-line" class="w-5 h-5 text-white"/>

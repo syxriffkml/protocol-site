@@ -6,6 +6,14 @@
     import { fade } from 'svelte/transition';
 	import HoverPopup from "$lib/Components/Popups/HoverPopup.svelte";
 
+    import { Drawer, getDrawerStore } from '@skeletonlabs/skeleton';
+    import type { DrawerSettings, DrawerStore } from '@skeletonlabs/skeleton';
+    import { initializeStores } from '@skeletonlabs/skeleton';
+
+    import SideBar from '$lib/Components/SideBar/SideBar.svelte';
+    import LoginModal from "$lib/Components/Modal/WalletModal/loginModal.svelte";
+    import LogoutModal from "$lib/Components/Modal/WalletModal/logoutModal.svelte";
+
 
     //Modal declaration
     let stakeModal1: Modal;
@@ -33,6 +41,40 @@
         isDown = !isDown;
         console.log("KriyaDex");
     }
+
+    //Start of Connect Wallet part
+    initializeStores();
+    const drawerStore = getDrawerStore();
+
+    let _loginModal: Modal;
+    let _logoutModal: Modal;
+
+    let isConnectAddress: boolean = false;
+
+    const wallet_settings: DrawerSettings = {
+		id: 'wallet-drawer',
+		bgBackdrop: 'bg-black/40',
+		bgDrawer: 'bg-white',
+		width: 'w-full h-auto',
+        position: 'bottom',
+	};
+
+    function ProvideSession() {
+        if (window.innerWidth <= 640) {
+            if (!isConnectAddress) {
+                drawerStore.open(wallet_settings);
+            } else {
+                drawerStore.open(wallet_settings);
+            }
+        } else {
+            if (!isConnectAddress) {
+                _loginModal.openModal();
+            } else {
+                _logoutModal.openModal();
+            }
+        }
+	}
+    //End of Connect Wallet part
 </script>
 
 
@@ -200,7 +242,7 @@
 </div>
 
 
-<Modal bind:this={stakeModal1} type="dark" desktopWidth="max-w-[452px]">
+<Modal bind:this={stakeModal1} type="dark" mobileWidth="w-5/6" desktopWidth="sm:max-w-[452px]">
     <div class="px-4 flex flex-col gap-y-6 mb-6">
         <p class="font-bold text-2xl md:text-3xl">Provide Liquidity</p>
 
@@ -259,7 +301,7 @@
         {/if}
 
         <div class="flex items-center justify-center">
-            <Button mode="blue">
+            <Button mode="blue" handler={(()=>{ ProvideSession(); })}>
                 <p class="text-lg">Connect Wallet</p>
             </Button>
         </div>
@@ -284,7 +326,7 @@
     </div>
 </Modal>
 
-<Modal bind:this={stakeModal2} type="dark" desktopWidth="max-w-[452px]">
+<Modal bind:this={stakeModal2} type="dark" mobileWidth="w-5/6" desktopWidth="sm:max-w-[452px]">
     <div class="px-4 flex flex-col gap-y-6 mb-6">
         <p class="font-bold text-2xl md:text-3xl">Provide Liquidity</p>
 
@@ -318,7 +360,7 @@
         </div>
 
         <div class="flex items-center justify-center">
-            <Button mode="blue">
+            <Button mode="blue" handler={(()=>{ ProvideSession(); })}>
                 <p class="text-lg">Connect Wallet</p>
             </Button>
         </div>
@@ -342,3 +384,34 @@
 
     </div>
 </Modal>
+
+
+<!--Wallet Login Modal-->
+<Modal
+	bind:this={_loginModal}
+	mobileWidth="w-auto sm:w-4/5"
+	desktopWidth="max-w-auto md:max-w-[800px] "
+	title="Connect a Wallet"
+	type="light"
+>
+	<LoginModal bind:isConnectAddress LoginModal={_loginModal} />
+</Modal>
+
+<!--Wallet Logout Modal-->
+<Modal
+	bind:this={_logoutModal}
+	mobileWidth="w-auto sm:w-4/5"
+	desktopWidth="max-w-auto md:max-w-[400px] "
+	type="light"
+>
+	<LogoutModal logoutModal={_logoutModal}></LogoutModal>
+</Modal>
+
+<!--Wallet Drawer-->
+<Drawer>
+    {#if !isConnectAddress}
+        <LoginModal bind:isConnectAddress LoginModal={_loginModal} />
+    {:else}
+        <LogoutModal logoutModal={_logoutModal}></LogoutModal>
+    {/if}
+</Drawer>

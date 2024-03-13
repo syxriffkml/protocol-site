@@ -4,6 +4,7 @@
     import Button from "$lib/Components/Button/Button.svelte";
     import Section from "$lib/Components/Box/Box.svelte";
 	import HoverPopup from "$lib/Components/Popups/HoverPopup.svelte";
+	import { goto } from "$app/navigation";
 
     let subAssets=['Positions','Fountain','Pool'];
 
@@ -63,10 +64,9 @@
                 </div>
 
                 <div class="px-2">
-                    <Button customClass={"w-full"}>
+                    <Button customClass={"w-full"} handler={()=>{ window.location.href='/fountain'; }}>
                         <div >
                             Claim
-            
                         </div>
                     </Button>
                 </div>

@@ -4,6 +4,15 @@
 	import HoverPopup from '$lib/Components/Popups/HoverPopup.svelte';
     import Icon from "@iconify/svelte";
 	import { fade, slide } from 'svelte/transition';
+
+    import { Drawer, getDrawerStore } from '@skeletonlabs/skeleton';
+    import type { DrawerSettings, DrawerStore } from '@skeletonlabs/skeleton';
+    import { initializeStores } from '@skeletonlabs/skeleton';
+
+    import SideBar from '$lib/Components/SideBar/SideBar.svelte';
+    import Modal from '$lib/Components/Modal/Index/Modal.svelte';
+    import LoginModal from "$lib/Components/Modal/WalletModal/loginModal.svelte";
+    import LogoutModal from "$lib/Components/Modal/WalletModal/logoutModal.svelte";
     
     let headSelect: string = 'BUCK'
 
@@ -45,6 +54,42 @@
 		{ title: 'Min Collateral ratio', data: 110 },
 		{ title: 'Recovery mode threshold', data: 150 }
 	];
+
+
+    
+    //Start of Connect Wallet part
+    initializeStores();
+    const drawerStore = getDrawerStore();
+
+    let _loginModal: Modal;
+    let _logoutModal: Modal;
+
+    let isConnectAddress: boolean = false;
+
+    const wallet_settings: DrawerSettings = {
+		id: 'wallet-drawer',
+		bgBackdrop: 'bg-black/40',
+		bgDrawer: 'bg-white',
+		width: 'w-full h-auto',
+        position: 'bottom',
+	};
+
+    function ProvideSession() {
+        if (window.innerWidth <= 640) {
+            if (!isConnectAddress) {
+                drawerStore.open(wallet_settings);
+            } else {
+                drawerStore.open(wallet_settings);
+            }
+        } else {
+            if (!isConnectAddress) {
+                _loginModal.openModal();
+            } else {
+                _logoutModal.openModal();
+            }
+        }
+	}
+    //End of Connect Wallet part
 </script>
 
 <div class="flex flex-col gap-y-6 p-2">
@@ -108,9 +153,7 @@
     </div>
     
     <div class="mx-auto">
-        <Button customClass="w-[150px]" handler={(()=>{
-            console.log('Click Connect Button');
-        })}>Connect</Button>
+        <Button customClass="w-[150px]" handler={(()=>{ ProvideSession(); })}>Connect</Button>
     </div>
 
 	<div class="border border-gray-500/20 rounded-lg p-4 space-y-3">
@@ -137,3 +180,33 @@
     </div>
 </div>
 
+<!--Wallet Drawer-->
+<Drawer>
+    {#if !isConnectAddress}
+        <LoginModal bind:isConnectAddress LoginModal={_loginModal} />
+    {:else}
+        <LogoutModal logoutModal={_logoutModal}></LogoutModal>
+    {/if}
+</Drawer>
+
+
+<!--Wallet Login Modal-->
+<Modal
+	bind:this={_loginModal}
+	mobileWidth="w-auto sm:w-4/5"
+	desktopWidth="max-w-auto md:max-w-[800px] "
+	title="Connect a Wallet"
+	type="light"
+>
+	<LoginModal bind:isConnectAddress LoginModal={_loginModal} />
+</Modal>
+
+<!--Wallet Logout Modal-->
+<Modal
+	bind:this={_logoutModal}
+	mobileWidth="w-auto sm:w-4/5"
+	desktopWidth="max-w-auto md:max-w-[400px] "
+	type="light"
+>
+	<LogoutModal logoutModal={_logoutModal}></LogoutModal>
+</Modal>

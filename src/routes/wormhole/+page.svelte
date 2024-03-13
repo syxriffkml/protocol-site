@@ -103,6 +103,15 @@
         selectedNetwork2 = tempNetwork;
         console.log(selectedNetwork1, selectedNetwork2);
     }
+
+    //Input function
+    let amount: string = '';
+    function handleInput(event: any) {
+        event.target.value = event.target.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');
+        if (event.target.name === 'amount') {
+            amount = event.target.value;
+        }
+    }
 </script>
 
 <div class="h-auto w-full flex items-center justify-center xl:max-w-[90rem] mx-auto p-2 gap-y-6">
@@ -120,8 +129,8 @@
             <div class="flex flex-row gap-x-2 w-full bg-white/10 p-2 rounded-lg">
                 <button class="flex flex-col items-center gap-y-3 bg-white/10 rounded-lg px-4 {selectedNetwork1.img === unselectedNetwork ? 'py-8' : 'py-4'} w-[65%]" on:click={selectNetwork1.openModal}>
                     <p class="text-gray-400 {selectedNetwork1.img === unselectedNetwork ? 'hidden' : ''}">Network</p>
-                    <img src={selectedNetwork1.img} alt="img" class="w-12 h-12"/>
-                    {selectedNetwork1.title}
+                    <img src={selectedNetwork1.img} alt="img" class="w-10 sm:w-12 h-auto"/>
+                    <p class="text-sm sm:text-md">{selectedNetwork1.title}</p>
                 </button>
 
                 <div class="flex flex-col w-full gap-y-2">
@@ -152,7 +161,7 @@
                             <p class="text-gray-400 text-sm">Amount</p>
                             <p>
                                 {#if (selectedNetwork1.img !== unselectedNetwork) && (selectedAsset.img !== unselectedAsset) }
-                                    <input type="text" placeholder="0.00" class="w-full text-sm bg-transparent p-0 focus:outline-none border-none focus:ring-0" name="amount1"/>
+                                    <input type="text" placeholder="0.00" class="w-full text-sm bg-transparent p-0 focus:outline-none border-none focus:ring-0" name="amount" on:input={handleInput} bind:value={amount}/>
                                     <div class="text-xs">($0.00)</div>
                                 {:else}
                                     —
@@ -187,8 +196,8 @@
             <div class="flex flex-row gap-x-2 w-full bg-white/10 p-2 rounded-lg">
                 <button class="flex flex-col items-center gap-y-3 bg-white/10 rounded-lg px-4 {selectedNetwork2.img === unselectedNetwork ? 'py-8' : 'py-4'} w-[65%]" on:click={selectNetwork2.openModal}>
                     <p class="text-gray-400 {selectedNetwork2.img === unselectedNetwork ? 'hidden' : ''}">Network</p>
-                    <img src={selectedNetwork2.img} alt="img" class="w-12 h-12"/>
-                    {selectedNetwork2.title}
+                    <img src={selectedNetwork2.img} alt="img" class="w-10 sm:w-12 h-auto"/>
+                    <p class="text-sm sm:text-md">{selectedNetwork2.title}</p>
                 </button>
 
                 <div class="flex flex-col w-full gap-y-2">
@@ -218,7 +227,7 @@
                             <p class="text-gray-400 text-sm">Amount</p>
                             <p>
                                 {#if (selectedNetwork2.img !== unselectedNetwork) && (selectedAsset.img !== unselectedAsset) }
-                                    <input type="text" placeholder="0.00" class="w-full text-sm bg-transparent p-0 focus:outline-none border-none focus:ring-0" name="amount2"/>
+                                    <input type="text" placeholder="0.00" class="w-full text-sm bg-transparent p-0 focus:outline-none border-none focus:ring-0" name="amount" on:input={handleInput} bind:value={amount}/>
                                     <div class="text-xs">($0.00)</div>
                                 {:else}
                                     —
@@ -235,14 +244,12 @@
         </div>
 
 
-
-
-        <div class="flex flex-row items-center justify-center gap-x-8 w-full">
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-x-8 gap-y-4 w-full">
             <button class="hover:underline">Resume Transaction</button>
             <button class="hover:underline">FAQs</button>
             <button class="hover:underline">Terms of Use</button>
         </div>
-        <div class="">
+        <div class="mt-2">
             <span class="text-[#7b7b7b]">Powered By</span>&nbsp;Wormhole
         </div>
     </div>
@@ -299,7 +306,6 @@
         </div>
     </div>
 </Modal>
-
 
 <Modal bind:this={selectAsset} type="dark" title="Select Asset" mobileWidth="w-auto" desktopWidth="sm:max-w-[600px]">
     <div class="flex flex-col items-center justify-center p-2 sm:p-4 gap-y-4">
