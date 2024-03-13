@@ -138,7 +138,7 @@
 				</div>
 				<div class="flex flex-col justify-center items-center gap-4">
 					<button
-						class="bg-blue-500 px-2 rounded-full"
+						class="bg-blue-500 px-2 rounded-full flex items-center justify-center py-1"
 						on:click={() => {
 							installWallet = !installWallet;
 						}}
@@ -184,7 +184,7 @@
 							</div>
 							<div class="my-auto">
 								<button
-									class="bg-gray-300 rounded-full px-4"
+									class="bg-gray-300 rounded-full px-4 flex items-center justify-center py-1"
 									on:click={() => {
 										window.open('https://metamask.io/', '_blank')
 									}}
