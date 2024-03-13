@@ -7,7 +7,7 @@
 
     let tabs = [
         {name: 'Overview', icon: 'material-symbols:home-outline-rounded', href: '/'},
-        {name: 'Dashboard', icon: 'bi:play', href: '/dashboard'},
+        {name: 'Dashboard', icon: 'ph:play-bold', href: '/dashboard'},
         {name: 'Position', icon: 'mdi:plus', href: '/position'},
         {name: 'Tank Pools', icon: 'ion:water-outline', href: '/tank-pools'},
         {name: 'Fountain', icon: 'gg:arrow-up-o', href: '/fountain'},
@@ -29,7 +29,7 @@
     }
     let showButtons = false;
 
-    export let inDrawer = false; // If the sidebar is in a drawer
+    export let inDrawer = false; // If the sidebar is in a drawer 
 </script>
 
 <!-- prettier-ignore -->
@@ -46,11 +46,15 @@
     
     <div class="w-full flex-grow space-y-3">
         {#each tabs as tab (tab.href)}
-            <Button width="w-full" mode="side" rounded="rounded-lg" customClass="h-14" handler={(()=>{ handleClickTab(tab); })}>
+            <Button 
+                width="w-full" mode="side" rounded="rounded-lg" 
+                customClass="h-14 {currentPage === tab.href ? 'active' : ''}" 
+                handler={(()=>{ handleClickTab(tab); })}
+            >
                 <div class="flex items-center justify-start gap-x-4">
                     {#if currentPage === tab.href}
                         <div class="rounded-full bg-[#aeecff] p-1">
-                            <Icon icon={tab.icon} class="w-7 h-7 text-black"/>
+                            <Icon icon={tab.icon} class="w-6 h-6 text-black"/>
                         </div>
                     {:else}
                         <div class="rounded-full bg-transparent p-1">
@@ -61,7 +65,11 @@
                 </div>
             </Button>
         {/each}
-        <Button width="w-full" mode="side" rounded="rounded-lg" customClass="h-14" handler={(()=>{ showButtons = !showButtons })}>
+        <Button 
+            width="w-full" mode="side" rounded="rounded-lg" 
+            customClass="h-14 {(currentPage === '/transfer-from-cex' || currentPage === '/wormhole') ? 'active' : ''}" 
+            handler={(()=>{ showButtons = !showButtons })}
+        >
             <div class="flex items-center justify-start gap-x-4">
                 {#if currentPage === '/transfer-from-cex' || currentPage === '/wormhole'}
                     <div class="rounded-full bg-[#aeecff] p-1">
