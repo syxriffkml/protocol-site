@@ -146,7 +146,7 @@
 
         {#if tabActive === 'PSM'}
              <div>
-                <div class="space-y-2 md:flex md:space-y-0 md:gap-4 gap-y-4 justify-between">
+                <div class="flex flex-col md:flex-row md:space-y-0 md:gap-4 gap-y-4 justify-between">
                     <!-- input 1 -->
                     <div class="flex w-full bg-[#aee]/10 backdrop-blur-sm rounded-lg p-1 {swap?'order-3':'order-1'}">
                         <input bind:value={inputPrimary} class="w-full bg-transparent focus:ring-0 rounded-l-lg !border-none" placeholder="0.00"/>
@@ -159,7 +159,7 @@
                                             imgSelect = imgTANK;                                         
                                         })}>
                                         <div class="w-4 h-4 my-auto">
-                                            <img src={tank.img} alt="">
+                                            <img src={tank.img} alt=""> 
                                         </div>
                                         <div>
                                             {tank.header}
