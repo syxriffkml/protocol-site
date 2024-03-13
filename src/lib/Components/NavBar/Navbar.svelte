@@ -45,6 +45,7 @@
 	};
 
     function ProvideSession() {
+        drawerStore.close();
         if (window.innerWidth <= 640) {
             if (!isConnectAddress) {
                 drawerStore.open(wallet_settings);
