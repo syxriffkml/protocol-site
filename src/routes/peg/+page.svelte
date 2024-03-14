@@ -8,7 +8,6 @@
     import type { DrawerSettings, DrawerStore } from '@skeletonlabs/skeleton';
     import { initializeStores } from '@skeletonlabs/skeleton';
 
-    import SideBar from '$lib/Components/SideBar/SideBar.svelte';
     import Modal from '$lib/Components/Modal/Index/Modal.svelte';
     import LoginModal from "$lib/Components/Modal/WalletModal/loginModal.svelte";
     import LogoutModal from "$lib/Components/Modal/WalletModal/logoutModal.svelte";
@@ -58,11 +57,18 @@
     ]
 
     let collateral = [
-        {name:'sui', img:`https://app.bucketprotocol.io/images/sui-icon.svg`},
-        {name:'weth', img:`https://app.bucketprotocol.io/images/eth-icon.svg`},
-        {name:'usdc', img:`https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fusdc-icon.png&w=64&q=75`},
-        {name:'usdt', img:`https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fusdt-light.png&w=64&q=75`},
-    ]
+        {name:'sui', img:`https://app.bucketprotocol.io/images/sui-icon.svg`, selected: true},
+        {name:'weth', img:`https://app.bucketprotocol.io/images/eth-icon.svg`, selected: false},
+        {name:'usdc', img:`https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fusdc-icon.png&w=64&q=75`, selected: false},
+        {name:'usdt', img:`https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fusdt-light.png&w=64&q=75`, selected: false},
+    ];
+
+    function selectCollateral(selectedCollateral: any) {
+        for (let coll of collateral) {
+            coll.selected = (coll === selectedCollateral);
+        }
+        collateral = collateral; // This line tells Svelte to re-render the component
+    }
 
      /**
 	 * @var pool will be temporarily used until API is ready
@@ -237,7 +243,7 @@
                     </p>
                     <div class="flex gap-x-2 flex-wrap gap-y-2">
                         {#each collateral as coll}
-                            <button class="border border-gray-500/30 flex gap-x-2 py-1.5 px-4 rounded-md">
+                            <button class="border border-gray-500/30 flex gap-x-2 py-1.5 px-4 rounded-md {coll.selected ? 'bg-white/25' : ''}" on:click={() => selectCollateral(coll)}>
                                 <div class="w-6 h-6">
                                     <img src={coll.img} alt="">
                                 </div>

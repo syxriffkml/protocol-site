@@ -9,7 +9,6 @@
     import type { DrawerSettings, DrawerStore } from '@skeletonlabs/skeleton';
     import { initializeStores } from '@skeletonlabs/skeleton';
 
-    import SideBar from '$lib/Components/SideBar/SideBar.svelte';
     import Modal from '$lib/Components/Modal/Index/Modal.svelte';
     import LoginModal from "$lib/Components/Modal/WalletModal/loginModal.svelte";
     import LogoutModal from "$lib/Components/Modal/WalletModal/logoutModal.svelte";

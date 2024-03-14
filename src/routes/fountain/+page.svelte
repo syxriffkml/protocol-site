@@ -10,7 +10,6 @@
     import type { DrawerSettings, DrawerStore } from '@skeletonlabs/skeleton';
     import { initializeStores } from '@skeletonlabs/skeleton';
 
-    import SideBar from '$lib/Components/SideBar/SideBar.svelte';
     import LoginModal from "$lib/Components/Modal/WalletModal/loginModal.svelte";
     import LogoutModal from "$lib/Components/Modal/WalletModal/logoutModal.svelte";
 
@@ -316,7 +315,9 @@
             <div class="flex items-center justify-between">
                 <p class="text-lg font-medium text-[#aeecff] flex items-center gap-x-1">
                     Estimated APR
-                    <Icon icon="ep:question-filled" class="text-[#aeecff] w-4 h-4"/>
+                    <HoverPopup header="Estimated APR" content="Your liquidity estimated APR is 0.13 % swap fee + 58.82 % in SUI token!" >
+                        <Icon icon="ep:question-filled" class="w-4 h-4"/>
+                    </HoverPopup>
                 </p>
                 <p class="text-lg font-medium">71.76%</p>
             </div>
@@ -375,7 +376,9 @@
             <div class="flex items-center justify-between">
                 <p class="text-lg font-medium text-[#aeecff] flex items-center gap-x-1">
                     Estimated APR
-                    <Icon icon="ep:question-filled" class="text-[#aeecff] w-4 h-4"/>
+                    <HoverPopup header="Estimated APR" content="Your liquidity estimated APR is 0.13 % swap fee + 58.82 % in SUI token!" >
+                        <Icon icon="ep:question-filled" class="w-4 h-4"/>
+                    </HoverPopup>
                 </p>
                 <p class="text-lg font-medium">71.76%</p>
             </div>
