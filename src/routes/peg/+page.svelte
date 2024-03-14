@@ -243,7 +243,7 @@
                     </p>
                     <div class="flex gap-x-2 flex-wrap gap-y-2">
                         {#each collateral as coll}
-                            <button class="border border-gray-500/30 flex gap-x-2 py-1.5 px-4 rounded-md {coll.selected ? 'bg-white/25' : ''}" on:click={() => selectCollateral(coll)}>
+                            <button class="border border-gray-500/30 flex gap-x-2 py-1.5 px-4 rounded-md hover:bg-white/10 {coll.selected ? 'bg-white/25 hover:bg-white/25' : ''}" on:click={() => selectCollateral(coll)}>
                                 <div class="w-6 h-6">
                                     <img src={coll.img} alt="">
                                 </div>
