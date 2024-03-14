@@ -153,7 +153,7 @@
                         <ComboBox {headSelect} {imgSelect} bind:showCombo={showDiv}>
                             <div class="z-[9999]">
                                 {#each pool as tank}
-                                    <button class="flex justify-start items-center gap-x-2 p-2" 
+                                    <button class="flex justify-start items-center gap-x-2 p-2 w-full" 
                                     on:click={(()=>{
                                             headSelect = tank.header; 
                                             imgSelect = imgTANK;                                         

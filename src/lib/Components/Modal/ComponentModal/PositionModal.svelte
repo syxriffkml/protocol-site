@@ -94,22 +94,23 @@
 
 <div class="flex flex-col gap-y-6 p-2">
 	<div class="space-y-1">
-        <div class="flex justify-between text-sm font-semibold">
-            <p class="">Amount of collateral</p>
-            <div class="flex gap-2">
-                <div>SUI Balance: </div>
+        <div class="flex justify-between text-sm">
+            <p class="font-semibold">Amount of collateral</p>
+            <div class="flex items-center gap-2">
+                <div class="text-[#aeecff]">{headSelect} Balance: </div>
                 <div>0</div>
             </div>
         </div>
         <div class="flex w-full gap-x-2 bg-[#aee]/10 backdrop-blur-sm rounded-lg p-1 relative">
-            <input bind:value={inputBalance} class="w-full bg-transparent rounded-l-lg !border-none" placeholder="0.00"/>
+            <input bind:value={inputBalance} class="w-full bg-transparent rounded-l-lg !border-none focus:ring-0" placeholder="0.00"/>
             <ComboBox {headSelect} {imgSelect} bind:showCombo={showTank}>
                 <div class="z-[9999]">
                     {#each pool as tank}
-                        <button class="flex justify-start items-center gap-x-2 p-2 z-20" 
+                        <button class="flex justify-start items-center gap-x-2 p-2 z-20 w-full" 
                         on:click={(()=>{
                             headSelect = tank.header; 
                             imgSelect = imgTANK; 
+                            console.log(headSelect,imgSelect);
                             })}>
                             <div class="w-4 h-4 my-auto">
                                 <img src={tank.img} alt="">
@@ -139,7 +140,7 @@
             </div>
         </div>
         <div class="flex w-full gap-x-2 bg-[#aee]/10 backdrop-blur-sm rounded-lg p-1">
-            <input bind:value={inputBorrow} class="w-full border bg-transparent rounded-l-lg z-10 !border-none" placeholder="0.00"/>
+            <input bind:value={inputBorrow} class="w-full border bg-transparent rounded-l-lg z-10 !border-none focus:ring-0" placeholder="0.00"/>
             <div class="flex justify-center items-center gap-2 bg-[#232f33] rounded-md px-2">
                 <div class="w-9 h-9 flex justify-center items-center">
                     <img

@@ -1,29 +1,37 @@
 <script lang="ts">
 	import Icon from "@iconify/svelte";
 	import { slide } from "svelte/transition";
+	import { onMount, onDestroy } from 'svelte';
 
 	export let showCombo: boolean = false;
-
 	export let imgSelect: string = '';
-
     export let headSelect:string= '';
 
-    export function handleOutsideClick(event: any) {
-        if (showCombo) {
-            if (event.target === event.currentTarget) {
-                showCombo = false;
-            }
-        }
-	}
+    let comboElement: any;
 
+    function handleClickOutside(event: any) {
+        if (showCombo && !comboElement.contains(event.target)) {
+            showCombo = false;
+        }
+    }
+
+    if (typeof window !== 'undefined') {
+        onMount(() => {
+            window.addEventListener('click', handleClickOutside);
+        });
+
+        onDestroy(() => {
+            window.removeEventListener('click', handleClickOutside);
+        });
+    }
 </script>
 
 <button
 	class=" flex justify-center items-center gap-2 bg-[#213035] rounded-md px-2"
-	on:click={(event) => {
-        handleOutsideClick;
-		showCombo = !showCombo;
-	}}
+	on:click|stopPropagation={(event) => {
+        showCombo = !showCombo;
+    }}
+    bind:this={comboElement}
 >
 	<div class="w-9 h-9 flex justify-center items-center">
 		<img src={imgSelect} alt="" />
