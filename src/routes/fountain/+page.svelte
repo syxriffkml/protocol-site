@@ -85,7 +85,7 @@
         <!--Aftermath-->
         <div class="flex flex-col gap-y-4 w-full">
             <p class="flex items-center gap-x-2">
-                <img src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Faftermath-icon.png&w=32&q=75" alt="img" class="w-[30px] h-auto">
+                <img src="assets/img/fountains/aftermath.png" alt="img" class="w-[30px] h-auto">
                 <span class="text-xl font-semibold">Aftermath</span>
             </p>
             <button class="text-left" on:click={stakeModal1.openModal}>
@@ -94,8 +94,8 @@
                         <div class="flex flex-col gap-y-2">
                             <p class="text-[#aeecff] font-medium">Pool</p>
                             <p class="flex flex-row">
-                                <img src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fusdc-icon.png&w=48&q=75" alt="img" class="w-[40px] h-auto z-[0]">
-                                <img src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fbuck-icon.png&w=48&q=75" alt="img" class="w-[40px] h-auto z-[1] -translate-x-4">
+                                <img src="assets/img/coins/usdc.png" alt="img" class="w-[40px] h-auto z-[0]">
+                                <img src="assets/img/coins/buck.png" alt="img" class="w-[40px] h-auto z-[1] -translate-x-4">
                                 <span class="text-xl xl:text-2xl font-medium">USDC-BUCK</span>
                             </p>
                         </div>
@@ -134,7 +134,7 @@
         <!--Cetus-->
         <div class="flex flex-col gap-y-2 w-full">
             <p class="flex items-center gap-x-2">
-                <img src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fcetus-icon.png&w=32&q=75" alt="img" class="w-[30px] h-auto">
+                <img src="assets/img/fountains/cetus.png" alt="img" class="w-[30px] h-auto">
                 <span class="text-xl font-semibold">Cetus</span>
             </p>
             <button class="text-left" on:click={stakeModal2.openModal}>
@@ -143,8 +143,8 @@
                         <div class="flex flex-col gap-y-2">
                             <p class="text-[#aeecff] font-medium">Pool</p>
                             <p class="flex flex-row">
-                                <img src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fbuck-icon.png&w=48&q=75" alt="img" class="w-[40px] h-auto z-[0]"> 
-                                <img src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fusdc-icon.png&w=48&q=75" alt="img" class="w-[40px] h-auto z-[1] -translate-x-4">
+                                <img src="assets/img/coins/buck.png" alt="img" class="w-[40px] h-auto z-[0]"> 
+                                <img src="assets/img/coins/usdc.png" alt="img" class="w-[40px] h-auto z-[1] -translate-x-4">
                                 <span class="text-xl xl:text-2xl font-medium">BUCK-USDC</span>
                             </p>
                         </div>
@@ -183,7 +183,7 @@
         <!--KriyaDEX-->
         <div class="flex flex-col gap-y-2 w-full">
             <p class="flex items-center gap-x-2">
-                <img src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fkriya-icon.png&w=32&q=75" alt="img" class="w-[30px] h-[35px]">
+                <img src="assets/img/fountains/kriya.png" alt="img" class="w-[30px] h-[35px]">
                 <span class="text-xl font-semibold">KriyaDEX</span>
             </p>
             <button class="text-left" on:click={toggleIcon}>
@@ -192,8 +192,8 @@
                         <div class="flex flex-col gap-y-2">
                             <p class="text-[#aeecff] font-medium">Pool</p>
                             <p class="flex flex-row">
-                                <img src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fbuck-icon.png&w=48&q=75" alt="img" class="w-[40px] h-auto z-[0]"> 
-                                <img src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fusdc-icon.png&w=48&q=75" alt="img" class="w-[40px] h-auto z-[1] -translate-x-4">
+                                <img src="assets/img/coins/buck.png" alt="img" class="w-[40px] h-auto z-[0]"> 
+                                <img src="assets/img/coins/usdc.png" alt="img" class="w-[40px] h-auto z-[1] -translate-x-4">
                                 <span class="text-xl xl:text-2xl font-medium">BUCK-USDC</span>
                             </p>
                         </div>
@@ -249,11 +249,11 @@
             <p class="font-semibold text-lg">Choose method to supply</p>
             <div class="flex flex-row flex-wrap gap-4">
                 <button on:click={() => supplyBtn = "USDC"} class="flex flex-row items-center gap-x-2 px-2 py-1 rounded-md {supplyBtn === 'USDC' ? 'bg-white/25' : 'bg-white/10'}">
-                    <img src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fusdc-icon.png&w=48&q=75" alt="img" class="w-[20px] h-auto">
+                    <img src="assets/img/coins/usdc.png" alt="img" class="w-[20px] h-auto">
                     <p class="text-md ">USDC</p>
                 </button>
                 <button on:click={() => supplyBtn = "USDC + BUCK"} class="flex flex-row items-center gap-x-2 px-2 py-1 rounded-md {supplyBtn === 'USDC' ? 'bg-white/10' : 'bg-white/25'}">
-                    <img src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fusdc-icon.png&w=48&q=75" alt="img" class="w-[20px] h-auto">
+                    <img src="assets/img/coins/usdc.png" alt="img" class="w-[20px] h-auto">
                     <p class="text-md ">USDC + BUCK</p>
                 </button>
             </div>
@@ -271,7 +271,7 @@
                 <div class="flex flex-row gap-x-2">
                     <button on:click={() => console.log("Max 1")} class="font-semibold text-[#7eb7cd]">Max</button>
                     <div class="flex flex-row w-auto items-center justify-center gap-x-2 bg-white/5 rounded-lg px-4 py-1">
-                        <img src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fusdc-icon.png&w=48&q=75" alt="img" class="w-[20px] h-auto">
+                        <img src="assets/img/coins/usdc.png" alt="img" class="w-[20px] h-auto">
                         <p>USDC</p>
                     </div>
                 </div>
@@ -291,7 +291,7 @@
                     <div class="flex flex-row gap-x-2">
                         <button on:click={() => console.log("Max 2")} class="font-semibold text-[#7eb7cd]">Max</button>
                         <div class="flex flex-row w-auto items-center justify-center gap-x-2 bg-white/5 rounded-lg px-4 py-1">
-                            <img src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fbuck-icon.png&w=48&q=75" alt="img" class="w-[20px] h-auto">
+                            <img src="assets/img/coins/buck.png" alt="img" class="w-[20px] h-auto">
                             <p>BUCK</p>
                         </div>
                     </div>
@@ -335,7 +335,7 @@
             <p class="font-semibold text-lg">Choose method to supply</p>
             <div class="flex flex-row flex-wrap gap-4">
                 <button class="flex flex-row items-center gap-x-2 px-2 py-1 rounded-md bg-white/25">
-                    <img src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fusdc-icon.png&w=48&q=75" alt="img" class="w-[20px] h-auto">
+                    <img src="assets/img/coins/usdc.png" alt="img" class="w-[20px] h-auto">
                     <p class="text-md ">USDC</p>
                 </button>
             </div>
@@ -353,7 +353,7 @@
                 <div class="flex flex-row gap-x-2">
                     <button on:click={() => console.log("Max 3")} class="font-semibold text-[#7eb7cd]">Max</button>
                     <div class="flex flex-row w-auto items-center justify-center gap-x-2 bg-white/5 rounded-lg px-4 py-1">
-                        <img src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fusdc-icon.png&w=48&q=75" alt="img" class="w-[20px] h-auto">
+                        <img src="assets/img/coins/usdc.png" alt="img" class="w-[20px] h-auto">
                         <p>USDC</p>
                     </div>
                 </div>

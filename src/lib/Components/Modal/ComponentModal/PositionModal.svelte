@@ -25,23 +25,23 @@
     
     let showTank : boolean = false;
     
-    let imgBUCK:string = 'https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fbuck-icon.png&w=32&q=75'
-    let imgTANK:string = 'https://app.bucketprotocol.io/images/vsui-icon.svg'
+    let imgBUCK:string = 'assets/img/coins/buck.png'
+    let imgTANK:string = 'assets/img/coins/vsui.png'
     
     let imgSelect: string = imgBUCK;
     /**
 	 * @var pool will be temporarily used until API ready
 	 */
 	let pool = [
-		{ header: 'SUI', totalDepo: 6.19, depo: 0, earn: 0, img: "https://app.bucketprotocol.io/images/vsui-icon.svg" },
-		{ header: 'afSUI', totalDepo: 6.19, depo: 0, earn: 0, img: "https://app.bucketprotocol.io/images/afsui-icon.svg" },
-		{ header: 'vSUI', totalDepo: 6.19, depo: 0, earn: 0, img: "https://app.bucketprotocol.io/images/vsui-icon.svg" },
-		{ header: 'haSUI', totalDepo: 6.19, depo: 0, earn: 0, img: "https://app.bucketprotocol.io/images/vsui-icon.svg" },
-		{ header: 'afSUI/SUI', totalDepo: 6.19, depo: 0, earn: 0, img: "https://app.bucketprotocol.io/images/vsui-icon.svg" },
-		{ header: 'WETH', totalDepo: 6.19, depo: 0, earn: 0, img: "https://app.bucketprotocol.io/images/vsui-icon.svg" },
-		{ header: 'USDC', totalDepo: 6.19, depo: 0, earn: 0, img: "https://app.bucketprotocol.io/images/vsui-icon.svg" },
-		{ header: 'USDT', totalDepo: 6.19, depo: 0, earn: 0, img: "https://app.bucketprotocol.io/images/vsui-icon.svg" },
-		{ header: 'USDY', totalDepo: 6.19, depo: 0, earn: 0, img: "https://app.bucketprotocol.io/images/vsui-icon.svg" }
+		{ header: 'SUI', totalDepo: 6.19, depo: 0, earn: 0, img: "assets/img/coins/vsui.png" },
+		{ header: 'afSUI', totalDepo: 6.19, depo: 0, earn: 0, img: "assets/img/coins/vsui.png" },
+		{ header: 'vSUI', totalDepo: 6.19, depo: 0, earn: 0, img: "assets/img/coins/vsui.png" },
+		{ header: 'haSUI', totalDepo: 6.19, depo: 0, earn: 0, img: "assets/img/coins/vsui.png" },
+		{ header: 'afSUI/SUI', totalDepo: 6.19, depo: 0, earn: 0, img: "assets/img/coins/vsui.png" },
+		{ header: 'WETH', totalDepo: 6.19, depo: 0, earn: 0, img: "assets/img/coins/vsui.png" },
+		{ header: 'USDC', totalDepo: 6.19, depo: 0, earn: 0, img: "assets/img/coins/vsui.png" },
+		{ header: 'USDT', totalDepo: 6.19, depo: 0, earn: 0, img: "assets/img/coins/vsui.png" },
+		{ header: 'USDY', totalDepo: 6.19, depo: 0, earn: 0, img: "assets/img/coins/vsui.png" }
 	];
 
 	let contentPosition = [
@@ -143,7 +143,7 @@
             <div class="flex justify-center items-center gap-2 bg-[#232f33] rounded-md px-2">
                 <div class="w-9 h-9 flex justify-center items-center">
                     <img
-                        src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fbuck-icon.png&w=32&q=75"
+                        src="assets/img/coins/buck.png"
                         alt=""
                     />
                 </div>

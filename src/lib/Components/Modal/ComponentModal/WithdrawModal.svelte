@@ -40,7 +40,7 @@
             <input bind:value={inputWithdraw} class="w-full bg-transparent  rounded-l-lg !border-transparent focus:ring-0" placeholder="0.00"/>
             <div class="flex justify-center items-center gap-2 bg-[#232f33] rounded-md px-2">
                 <div class="w-9 h-9 flex justify-center items-center">
-                    <img src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fbuck-icon.png&w=32&q=75" alt="">
+                    <img src="assets/img/coins/buck.png" alt="">
                 </div>
                 <div class="font-bold text-center w-full">
                     BUCK
@@ -69,7 +69,7 @@
             </div>
             <div class="flex justify-center items-center gap-x-3">
                 <div class="w-10 h-10">
-                    <img src="https://app.bucketprotocol.io/images/vsui-icon.svg" alt="">
+                    <img src="assets/img/coins/vsui.png" alt="">
                 </div>
                 <div class="text-xl font-semibold">
                     vSUI

@@ -15,7 +15,7 @@
     <Section customClass={"relative w-full space-y-4 pt-8 px-8 pb-6"} {animate}>
         <div class="pt-4">
             <div class="xl:-translate-x-[65px] -translate-y-[30px] absolute bg-white z-[1]  rounded-full p-1.5">
-                <img src="https://app.bucketprotocol.io/images/vsui-icon.svg" alt="">
+                <img src="assets/img/coins/vsui.png" alt="">
             </div>
             <div class="xl:-translate-x-[40px] -translate-y-[15px] w-fit xl:w-[200px] bg-white text-black text-2xl text-right p-1 pr-4 font-semibold rounded-full">
                 <div class="ml-20">

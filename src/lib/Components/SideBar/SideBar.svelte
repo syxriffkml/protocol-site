@@ -40,7 +40,7 @@
             <slot name="closeButton"></slot>
         {/if}
         <button class="flex-grow flex justify-center" on:click={(()=>{ window.location.href = '/' })}>
-            <img src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fbucket-text-logo.png&w=256&q=75" alt="img" class="w-[140px] h-auto -translate-x-4">
+            <img src="assets/img/bucket-logo-desktop.png" alt="img" class="w-[140px] h-auto -translate-x-4">
         </button>    
     </div>
     
@@ -112,8 +112,8 @@
     <div class="flex flex-col {inDrawer ? 'items-center pb-8' : ''} gap-y-2">
         <p class="text-[#aeecff] text-sm">Audited By</p>
         <div class="flex flex-row gap-x-2">
-            <img src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fottersec-logo.png&w=128&q=75" alt="img" class="w-[90px] h-auto">
-            <img src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fmovebit-logo.png&w=256&q=75" alt="img" class="w-[140px] h-auto">
+            <img src="assets/img/sponsors/ottersec.png" alt="img" class="w-[90px] h-auto">
+            <img src="assets/img/sponsors/movebit.png" alt="img" class="w-[140px] h-auto">
         </div>
     </div>
 </div>

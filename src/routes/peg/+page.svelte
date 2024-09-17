@@ -22,9 +22,9 @@
 
     let headSelect: string = 'vSUI';
 
-    let imgBUCK:string = 'https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fbuck-icon.png&w=32&q=75';
+    let imgBUCK:string = 'assets/img/coins/buck.png';
 
-    let imgTANK:string = 'https://app.bucketprotocol.io/images/vsui-icon.svg';
+    let imgTANK:string = 'assets/img/coins/vsui.png';
     
     let imgSelect: string = imgTANK;
 
@@ -57,10 +57,10 @@
     ]
 
     let collateral = [
-        {name:'sui', img:`https://app.bucketprotocol.io/images/sui-icon.svg`, selected: true},
-        {name:'weth', img:`https://app.bucketprotocol.io/images/eth-icon.svg`, selected: false},
-        {name:'usdc', img:`https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fusdc-icon.png&w=64&q=75`, selected: false},
-        {name:'usdt', img:`https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fusdt-light.png&w=64&q=75`, selected: false},
+        {name:'sui', img:`assets/img/coins/sui.png`, selected: true},
+        {name:'weth', img:`assets/img/coins/eth2.png`, selected: false},
+        {name:'usdc', img:`assets/img/coins/usdc.png`, selected: false},
+        {name:'usdt', img:`assets/img/coins/usdt.png`, selected: false},
     ];
 
     function selectCollateral(selectedCollateral: any) {
@@ -74,15 +74,15 @@
 	 * @var pool will be temporarily used until API is ready
 	 */
 	let pool = [
-		{ header: 'SUI', totalDepo: 6.19, depo: 0, earn: 0, img: "https://app.bucketprotocol.io/images/vsui-icon.svg" },
-		{ header: 'afSUI', totalDepo: 6.19, depo: 0, earn: 0, img: "https://app.bucketprotocol.io/images/afsui-icon.svg" },
-		{ header: 'vSUI', totalDepo: 6.19, depo: 0, earn: 0, img: "https://app.bucketprotocol.io/images/vsui-icon.svg" },
-		{ header: 'haSUI', totalDepo: 6.19, depo: 0, earn: 0, img: "https://app.bucketprotocol.io/images/vsui-icon.svg" },
-		{ header: 'afSUI/SUI', totalDepo: 6.19, depo: 0, earn: 0, img: "https://app.bucketprotocol.io/images/vsui-icon.svg" },
-		{ header: 'WETH', totalDepo: 6.19, depo: 0, earn: 0, img: "https://app.bucketprotocol.io/images/vsui-icon.svg" },
-		{ header: 'USDC', totalDepo: 6.19, depo: 0, earn: 0, img: "https://app.bucketprotocol.io/images/vsui-icon.svg" },
-		{ header: 'USDT', totalDepo: 6.19, depo: 0, earn: 0, img: "https://app.bucketprotocol.io/images/vsui-icon.svg" },
-		{ header: 'USDY', totalDepo: 6.19, depo: 0, earn: 0, img: "https://app.bucketprotocol.io/images/vsui-icon.svg" }
+		{ header: 'SUI', totalDepo: 6.19, depo: 0, earn: 0, img: "assets/img/coins/vsui.png" },
+		{ header: 'afSUI', totalDepo: 6.19, depo: 0, earn: 0, img: "assets/img/coins/vsui.png" },
+		{ header: 'vSUI', totalDepo: 6.19, depo: 0, earn: 0, img: "assets/img/coins/vsui.png" },
+		{ header: 'haSUI', totalDepo: 6.19, depo: 0, earn: 0, img: "assets/img/coins/vsui.png" },
+		{ header: 'afSUI/SUI', totalDepo: 6.19, depo: 0, earn: 0, img: "assets/img/coins/vsui.png" },
+		{ header: 'WETH', totalDepo: 6.19, depo: 0, earn: 0, img: "assets/img/coins/vsui.png" },
+		{ header: 'USDC', totalDepo: 6.19, depo: 0, earn: 0, img: "assets/img/coins/vsui.png" },
+		{ header: 'USDT', totalDepo: 6.19, depo: 0, earn: 0, img: "assets/img/coins/vsui.png" },
+		{ header: 'USDY', totalDepo: 6.19, depo: 0, earn: 0, img: "assets/img/coins/vsui.png" }
 	];
 
     //Start of Connect Wallet part
@@ -194,10 +194,10 @@
                         </button>
                         <div class="flex justify-center items-center gap-2 bg-[#232f33] rounded-md px-2">
                             <div class="w-9 h-9 flex justify-center items-center">
-                                <img src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fbuck-icon.png&w=32&q=75" alt="">
+                                <img src="assets/img/coins/buck.png" alt="">
                             </div>
                             <div class="font-bold text-center w-full">
-                                BUCK
+                                BUCK 
                             </div>
                         </div>    
                     </div>
@@ -273,7 +273,7 @@
                         <input bind:value={inputPrimary} class="w-full bg-transparent focus:ring-0 rounded-l-lg !border-none" placeholder="0.00"/>
                         <div class="flex justify-center items-center gap-2 bg-[#232f33] rounded-md px-2">
                             <div class="w-9 h-9 flex justify-center items-center">
-                                <img src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fbuck-icon.png&w=32&q=75" alt="">
+                                <img src="assets/img/coins/buck.png" alt="">
                             </div>
                             <div class="font-bold text-center w-full">
                                 BUCK

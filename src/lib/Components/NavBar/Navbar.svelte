@@ -67,11 +67,11 @@
     <!--Desktop View-->
     <div class="hidden xl:flex flex-row bg-black/25 w-auto rounded-3xl py-2 px-4 gap-x-4">
         <div class="flex flex-row items-center justify-center gap-x-2">
-            <img src="https://app.bucketprotocol.io/images/sui-icon.svg" alt="coins" class="w-[30px] h-auto">
+            <img src="assets/img/coins/sui.png" alt="coins" class="w-[30px] h-auto">
             <p>$1.56</p>
         </div>
         <div class="flex flex-row items-center justify-center gap-x-2">
-            <img src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Feth-light.png&w=64&q=75" alt="coins" class="w-[30px] h-auto">
+            <img src="assets/img/coins/eth2.png" alt="coins" class="w-[30px] h-auto">
             <p>$3,697.73</p>
         </div>
     </div>
@@ -97,11 +97,11 @@
                 <div class="flex flex-col items-center gap-y-4 ">
                     <div class="flex flex-row bg-white/10 w-fit rounded-3xl py-2 px-4 gap-x-4">
                         <div class="flex flex-row items-center justify-center gap-x-2">
-                            <img src="https://app.bucketprotocol.io/images/sui-icon.svg" alt="coins" class="w-[30px] h-auto">
+                            <img src="assets/img/coins/sui.png" alt="coins" class="w-[30px] h-auto">
                             <p>$1.56</p>
                         </div>
                         <div class="flex flex-row items-center justify-center gap-x-2">
-                            <img src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Feth-light.png&w=64&q=75" alt="coins" class="w-[30px] h-auto">
+                            <img src="assets/img/coins/eth2.png" alt="coins" class="w-[30px] h-auto">
                             <p>$3,697.73</p>
                         </div>
                     </div>

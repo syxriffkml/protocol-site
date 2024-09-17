@@ -13,7 +13,7 @@
 <style>
     /* .banner {
         @apply relative bg-cover bg-center;
-        background-image: url('https://app.bucketprotocol.io/_next/image?url=%2Fimages%2F3d-sui-bg.png&w=750&q=75');
+        background-image: url('https://legacy.bucketprotocol.io/_next/image?url=%2Fimages%2F3d-sui-bg.png&w=750&q=75');
     }
 
     .banner::before {
@@ -31,7 +31,7 @@
     .banner::before {
         content: "";
         @apply absolute inset-px bg-[#232f33] rounded-lg z-[-1];
-        background-image: url('https://app.bucketprotocol.io/_next/image?url=%2Fimages%2F3d-sui-bg.png&w=750&q=75');
+        background-image: url('/assets/img/card-bg.png');
         background-size: cover ;
         pointer-events: none;
     }

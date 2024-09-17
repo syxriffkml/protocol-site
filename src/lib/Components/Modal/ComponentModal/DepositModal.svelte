@@ -29,7 +29,7 @@
             </button>
             <div class="flex justify-center items-center gap-2 bg-[#232f33] rounded-md px-2">
                 <div class="w-9 h-9 flex justify-center items-center">
-                    <img src="https://app.bucketprotocol.io/_next/image?url=%2Fimages%2Fbuck-icon.png&w=32&q=75" alt="">
+                    <img src="assets/img/coins/buck.png" alt="">
                 </div>
                 <div class="font-bold text-center w-full">
                     BUCK
